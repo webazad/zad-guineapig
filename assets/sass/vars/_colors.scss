@@ -1,0 +1,23 @@
+:root {
+    --text: rgba(0,186,186,1);
+    --menu-text: #222222;
+    --menu-text-hover: rgba(0,186,186,1);
+    --menu-bg: rgba(0,186,186,1);
+    --menu-bg-hover: rgba(0,186,186,1);
+    --bg: rgba(57,225,245,1);
+    --body: rgba(65,64,66,.8);
+    --border: rgba(227,227,227,1);
+    --white: rgba(255,255,255,1);
+    --black: rgba(0,0,0,1);
+    --tranparent: rgba(0,0,0,0);
+    --border-radius: 3px;
+}
+$bg:#ffffff;
+$color:#000000;
+$border_color:#ffffff;
+$colors:(
+    text:#ffffff,
+    border:#ffffff,
+    background:#ffffff
+);
+// color:map_get($colors,text);

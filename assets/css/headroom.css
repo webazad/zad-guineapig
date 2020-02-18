@@ -1,0 +1,15 @@
+.header--fixed {
+    position: fixed;
+    z-index: 10;
+    right: 0;
+    left: 0;
+    top: 0;
+    will-change: transform;
+    transition: transform .3s linear;
+}
+.swingInX {
+  transform: translateY(0%);
+}
+.swingOutX {
+  transform: translateY(-100%);
+}
