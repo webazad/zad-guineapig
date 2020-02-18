@@ -18,7 +18,10 @@
         }
         .footer-right {
             width: 100%;
-            text-align: right;
+            text-align: right ;
+            p{
+                text-align: left;
+            }
         }
     }
 }

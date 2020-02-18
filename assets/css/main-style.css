@@ -254,12 +254,13 @@ a {
 }
 
 .azad-header .header-container .logo h1 {
-  line-height: 0;
+  line-height: 1rem;
 }
 
 .azad-header .header-container .logo h1 a {
   display: inline-block;
   font-size: 2rem;
+  line-height: 2rem;
 }
 
 .azad-header .header-container .logo h1 a img {
@@ -553,6 +554,10 @@ a {
 .azad-footer .footer-container .footer-right {
   width: 100%;
   text-align: right;
+}
+
+.azad-footer .footer-container .footer-right p {
+  text-align: left;
 }
 
 @media only screen and (max-width: 767px), only screen and (max-device-width: 767px) {
