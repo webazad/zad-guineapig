@@ -11,7 +11,6 @@ defined('ABSPATH') || exit;
 if ( ! class_exists( 'Init' ) ):
 
      final class Init{
-         public $theme_name = '';
          public function __construct() {}
          public static function get_services() {
              return [

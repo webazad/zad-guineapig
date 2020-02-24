@@ -53,6 +53,13 @@ if ( ! class_exists( 'Azad_Supports' ) ):
                 ));
             } 
         }
+        public static function get_instance(){
+            if(is_null(self::$_instance) && ! isset(self::$_instance) && ! (self::$_instance instanceof self)){
+                self::$_instance = new self();            
+            }
+            return self::$_instance;
+        }
+        public function __destruct() {}
     }
 endif;
 if(! function_exists('load_azad_supports')){

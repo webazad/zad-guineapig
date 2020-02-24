@@ -8,8 +8,11 @@
 // EXIT IF ACCESSED DIRECTLY
 defined('ABSPATH') || exit;
 
-$theme_name = wp_get_theme()->get( 'Name' );
-$theme_version = wp_get_theme()->get( 'Version' );
+define( 'AZAD_GUINEAPIG_NAME', wp_get_theme()->get( 'Name' ) );
+define( 'AZAD_GUINEAPIG_VERSION', wp_get_theme()->get( 'Version' ) );
+define( 'AZAD_GUINEAPIG_TEXTDOMAIN', wp_get_theme()->get( 'TextDomain' ) );
+define( 'AZAD_GUINEAPIG_DIR', trailingslashit( get_template_directory() ) );
+define( 'AZAD_GUINEAPIG_URI', trailingslashit( esc_url( get_template_directory_uri() ) ) );
 
 if(file_exists(dirname(__FILE__) . '/vendor/autoload.php')){
     require_once dirname(__FILE__) . '/vendor/autoload.php';
