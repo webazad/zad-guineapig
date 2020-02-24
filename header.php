@@ -103,13 +103,7 @@
                     <!--  THE WAY SHOW DYNAMIC SIDEBAR -->
                     <?php if ( !dynamic_sidebar( 'slider_menu_widget' ) ) : ?>
                         <aside id="search" class="widget">
-                                <?php get_search_form(); ?>
-                        </aside>
-                        <aside id="archives" class="widgets">
-                            <h3 class="widget-title">Archives</h3>
-                            <ul>
-                                <?php wp_get_archives('type=monthly&limit=12'); ?>
-                            </ul>
+                        <p>You need to select a widget to show things.</p>
                         </aside>    
                     <?php endif; // end sidebar widget area ?>
                 </div>

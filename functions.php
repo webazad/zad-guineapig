@@ -17,3 +17,10 @@ if(file_exists(dirname(__FILE__) . '/vendor/autoload.php')){
 if ( class_exists( 'Inc\\Init' ) ) :    
     Inc\Init::register_services();
 endif;
+
+
+if ( ! function_exists( 'azad_gutenberg_meta' ) ) :
+    function azad_gutenberg_meta(){
+        echo 'Follow twentysixteen';
+    }
+endif;

@@ -34,6 +34,10 @@ if ( ! class_exists( 'Azad_Supports' ) ):
             if(function_exists('add_theme_support')){
                 add_theme_support( 'post-thumbnails', array( 'post', 'page', 'sliders', 'portfolio', 'promotion' ) );
             }
+            // 8. TO ADD POST FORMAT
+			if(function_exists('add_theme_support')){
+				add_theme_support('post-formats', array('aside','gallery','link','image','quote','status','video','audio','chat'));
+			}
             // 4.. MULTIPLE MENU REGISTER SYSTEM
             if(function_exists('register_nav_menus')){
                 register_nav_menus(array(

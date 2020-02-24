@@ -1,7 +1,7 @@
 <?php
 /**
 *-----------------------------------------------------------------------------
-* :: @package azad-x
+* :: @package azad-guineapig
 * :: @version 1.0.0
 * :: TO REGISTER WIDGETS IN SIDEBARS OR IN FOOTER OR ANYWHERE IN THE PAGE 
 *-----------------------------------------------------------------------------
@@ -90,9 +90,6 @@ if ( ! class_exists( 'Azad_Widgets' ) ):
                     'after_title'   => '</h3>'
                 ));
             }
-        }
-        public static function register() {
-            //echo 'Register';   
         }
         public static function get_instance(){
             if(is_null(self::$_instance) && ! isset(self::$_instance) && ! (self::$_instance instanceof self)){

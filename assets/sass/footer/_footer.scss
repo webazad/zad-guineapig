@@ -18,10 +18,7 @@
         }
         .footer-right {
             width: 100%;
-            text-align: right ;
-            p{
-                text-align: left;
-            }
+            text-align: right;
         }
     }
 }
@@ -38,11 +35,7 @@
             }
             .footer-right {
                 width: 100%;
-
-                .azad-social-icons{
-                    text-align: left !important;
-                    margin-left:-14px;
-                }
+                text-align:left;
             }
         }
     }
