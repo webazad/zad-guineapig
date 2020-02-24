@@ -7,7 +7,7 @@
 */
 ?>
             <!-- FOOTER SECTION BEGINS -->
-            <footer class="azad-footer" style="background:<?php echo get_theme_mod('copyright_bg','#39e1f5'); ?>;color:<?php echo get_theme_mod('copyright_color','#ffffff'); ?>;">
+            <footer class="azad-footer" style="background:<?php echo get_theme_mod('copyright_bg','#e3e3e3'); ?>;color:<?php echo get_theme_mod('copyright_color','#000000'); ?>;">
                 <div class="azad-container">
                     <div class="footer-container">
                         <div class="footer-left">

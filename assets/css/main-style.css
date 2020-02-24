@@ -55,10 +55,6 @@ address, article, aside, canvas, details, figure, figure img, figcaption, footer
   --paddin-bottom: 5rem;
 }
 
-body, *, html {
-  cursor: url(https://cregital.com/wp-content/uploads/2016/02/cursor-default.svg), default !important;
-}
-
 body {
   font: 1em/1.25em "Cabin", Helvetica, Arial, sans-serif;
   text-align: center;
