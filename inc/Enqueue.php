@@ -27,8 +27,17 @@ if ( ! class_exists( 'Enqueue' ) ):
             wp_register_script('headroom',trailingslashit(get_template_directory_uri()).'assets/js/headroom.min.js',array('jquery'),AZAD_GUINEAPIG_VERSION,true);
             wp_enqueue_script('headroom');
 
-            wp_register_script('activation',trailingslashit(get_template_directory_uri()).'assets/js/activation.js',array('jquery'),AZAD_GUINEAPIG_VERSION,true);
+            
+            wp_register_script('index',trailingslashit(get_template_directory_uri()).'assets/js/index.js',array('jquery'),AZAD_GUINEAPIG_VERSION,true);
+            wp_enqueue_script('index');
+            
+            wp_register_script('isotope',trailingslashit(get_template_directory_uri()).'assets/js/isotope.pkgd.min.js',array('jquery'),AZAD_GUINEAPIG_VERSION,true);
+            wp_enqueue_script('isotope');
+
+            wp_register_script('activation',trailingslashit(get_template_directory_uri()).'assets/js/activation.js',array('jquery','isotope'),AZAD_GUINEAPIG_VERSION,true);
             wp_enqueue_script('activation');
+
+            
         }
         public static function get_instance(){
             if(is_null(self::$_instance) && ! isset(self::$_instance) && ! (self::$_instance instanceof self)){

@@ -4,7 +4,7 @@
             <?php if(is_sticky() && is_home() && ! is_paged()) : ?>
                 <span class="sticky-post"><?php _e('Featured','azad-gutenberg'); ?></span>
             <?php endif; ?>
-            <?php the_title(sprintf('<h2 class="azad-title"><a href="%s">',esc_url(get_permalink())),'</a></h2>'); ?>
+            <?php //the_title(sprintf('<h2 class="azad-title"><a href="%s">',esc_url(get_permalink())),'</a></h2>'); ?>
         </header>
         <div class="article-content">
             <?php 

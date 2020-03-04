@@ -22,24 +22,19 @@
                 <div class="azad-container">
                     <div class="header-container">
                         <div class="logo">
-                            <h1>
-                                <?php
-                                    if(has_custom_logo()){
-                                        the_custom_logo();                             
-                                    }else{ ?>
-                                        <a href="<?php echo site_url(); ?>"><?php bloginfo('name'); ?></a>
-                                    <?php }
-                                ?>
-                            </h1>
+                            <?php
+                                azad_site_logo();
+                            ?>
                             <div id="hamburger-menu" class="burger-button"><span></span></div>
                         </div>
                         <div class="azad-nav">
                             <nav class="desktop-menus">
                                 <!-- THE WAY TO SHOW NAVIGATION -->
-                                <?php 
+                                <?php
+								
                                     if(function_exists('wp_nav_menu')){
                                         $defaults = array(
-                                            'theme_location'  => 'header_main_menu',
+											'theme_location'  => 'header_main_menu',
                                             'menu'            => '',
                                             'container'       => 'div',
                                             'container_class' => '',
@@ -62,50 +57,49 @@
                                     }
                                 ?>
                             </nav>
+                            <?php
+								// Check whether the header search is activated in the customizer.
+								$enable_header_search = get_theme_mod( 'header_search_icon', true );								
+								if($enable_header_search) : ?>
+                                <!-- SEARCH TOGGLE BUTTON BEGINS -->
+                                <div class="azad-search-button">
+                                    <div class="header-toggles hide-no-js">
+                                        <div class="toggle-wrapper search-toggle-wrapper">
+                                            <button class="toggle search-toggle desktop-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
+                                                <span class="toggle-inner">
+                                                <?php azad_the_svg( 'search' ); ?>
+                                                    <!--span class="toggle-text">Search</span-->
+                                                </span>
+                                            </button><!-- .search-toggle -->
+                                        </div>
+                                    </div>
+                                </div><!-- ends search toggle button -->
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>                
             </header>
+            <?php
+                // Output the search modal (if it is activated in the customizer).
+                if ( true === $enable_header_search ) {
+                    get_template_part( 'template-parts/modal-search' );
+                }
+            ?>              
             <!-- RESPONSIVE SLIDER MENUS BEGINS -->
             <nav class="mobile-menus">
-                <div class="responsive-slider-logo">
-                    <h1>
-                        <a href="<?php echo home_url(); ?>"><img src="<?php echo get_theme_mod('mobile_slider_logo'); ?>" /></a>
-                    </h1>
-                </div>
                 <!-- THE WAY TO SHOW NAVIGATION -->
                 <?php 
                     if(function_exists('wp_nav_menu')){
                         $defaults = array(
                             'theme_location'  => 'responsive_slider_menu',
-                            'menu'            => '',
                             'container'       => 'div',
-                            'container_class' => '',
-                            'container_id'    => '',
-                            'menu_class'      => 'nav navbar-nav',
-                            'menu_id'         => '',
-                            'echo'            => true,
-                            'fallback_cb'     => 'wp_page_menu',
-                            'before'          => '',
-                            'after'           => '',
-                            'link_before'     => '',
-                            'link_after'      => '',
                             'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                            'depth'           => 0,
-                            'walker'          => ''
+                            'show_toggles'   => true,
                         );
                         wp_nav_menu($defaults);
                     }elseif(has_nav_menu('sidebar_widget_one')){
                         echo "Pleas set the menu first";
                     }
                 ?>
-                <div class="slider-menu-social">
-                    <!--  THE WAY SHOW DYNAMIC SIDEBAR -->
-                    <?php if ( !dynamic_sidebar( 'slider_menu_widget' ) ) : ?>
-                        <aside id="search" class="widget">
-                        <p>You need to select a widget to show things.</p>
-                        </aside>    
-                    <?php endif; // end sidebar widget area ?>
-                </div>
+                
             </nav><!-- ends responsive slider menus -->
-        

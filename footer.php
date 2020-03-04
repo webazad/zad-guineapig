@@ -17,7 +17,7 @@
                             <!--  THE WAY SHOW DYNAMIC SIDEBAR -->
 							<?php if ( !dynamic_sidebar( 'footer_widget_two' ) ) : ?>
 								<aside id="search" class="widget">
-									<p>You need to select a widget to show things.</p>
+									<p>You need to select a widget to display data.</p>
 								</aside>
 							<?php endif; // end sidebar widget area ?>
                         </div>
