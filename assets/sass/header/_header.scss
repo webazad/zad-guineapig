@@ -28,29 +28,19 @@
                 display: none;
             }
         }
+        // HEADER MAIN MENU
         .azad-nav {
             display: flex;
             align-items:center;
             .desktop-menus {
-                ul{
+                ul{ 
                     display: flex;
-                    justify-content: flex-end;
-
+                    flex-wrap: wrap;
+	                justify-content: flex-end;
+                    align-items: center;
                     li{
+                        position: relative;
                         margin-left:2.5rem;
-                        position:relative;
-                        line-height:1.25;                        
-
-                        a{
-                            color: #cd2653;
-                            display: block;
-                            padding-right: 1rem;
-                            position: relative;
-                            font-size: 1.5rem;
-                            &:hover{
-                                text-decoration: underline;
-                            }
-                        }
                         .icon{
                             color:#cd2653;
                             display:block;
@@ -78,10 +68,20 @@
                                 width: 0.5rem;
                             }
                         }
+                        a{
+                            color: var(--text);
+                            padding: 0rem 1rem;
+                            display: block;
+                            width: 100%;
+                            &:hover{
+                                text-decoration: underline;
+                            }
+                        }
                         ul{
+                            background: #000;
                             border-radius: 0.4rem;
                             color: #fff;
-                            font-size: 1.7rem;
+                            font-size: 1rem;
                             opacity: 0;
                             padding: 1rem 0;
                             position: absolute;
@@ -89,26 +89,42 @@
                             top: calc(100% + 2rem);
                             transition: opacity 0.15s linear, transform 0.15s linear, right 0s 0.15s;
                             transform: translateY(0.6rem);
-                            width: 13rem;
+                            width: 14rem;
                             z-index: 1;
-                            display:flex;
-                            flex-direction: column;
-                            height: auto;
-                            background:#000;
-
+                            display: initial;
+                            text-align: left;
                             li{
-                                margin-left:0;
+                                margin: 0;
                                 a{
-                                    display:block;
-                                    padding: .5rem;
-                                    color:#ffffff;
-                                    text-decoration: none !important;
-                                    &:hover{
-                                        text-decoration: underline !important;
+                                    padding: .5rem 1rem;
+                                    color: var(--white);
+                                }
+                                &:hover > ul{
+                                    right: calc(100% + 2rem);
+                                }
+                                .icon{
+                                    right: 1rem;
+                                    color: white;
+                                }
+                                ul{
+                                    top: -1rem;
+                                    &:before{
+                                        top: 0;
+                                        height: auto;
+                                        width: 2rem;
+                                        left: auto;
+                                        right: -2rem;
+                                        bottom: 0;
+                                    }
+                                    &:after{
+                                        border-bottom-color: transparent;
+                                        border-left-color: #000000;
+                                        top: 1.5rem;
+                                        right: -1.2rem;
+                                        bottom: auto;
                                     }
                                 }
                             }
-
                             &:before, &:after {
                                 content: "";
                                 display: block;
@@ -126,32 +142,29 @@
                                 right: 1.8rem;
                             }
                         }
-                        &:hover ul{
+                        &:hover > ul{
                             right: 0;
                             opacity: 1;
                             transform: translateY(0);
                             transition: opacity 0.15s linear, transform 0.15s linear;
                         }
                     }
-                    .current-menu-item > a{
-                        text-decoration: underline !important;
-                    }                    
-                }
+                }                
             }
             .azad-search-button{
-                display:flex;
-                align-items:center;
-                margin-left:1.5rem;
+                display: flex;
+                align-items: center;
+                margin-left: 1.5rem;
                     
                 .toggle-wrapper{
-                    line-height:0;
+                    line-height: 0;
                     .toggle{
-                        border:none;
-                        background:none;
-                        cursor:pointer;
+                        border: none;
+                        background: none;
+                        cursor: pointer;
                         .toggle-inner{
-                            display:flex;
-                            justify-content:center;
+                            display: flex;
+                            justify-content: center;
                         }
                         &:focus{
                             outline: none;

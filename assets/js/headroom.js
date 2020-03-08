@@ -465,3 +465,16 @@
   
     return Headroom;
   }));
+
+  
+  
+  // grab an element
+var elem = document.querySelector("header");
+//var headroom = new Headroom(elem, {"offset": 0,"tolerance": 5,"classes": {"initial": "animated","pinned": "slideDown","unpinned": "slideUp"}});
+//var headroom = new Headroom(elem, {"offset": 0,"tolerance": 5,"classes": {"initial": "animated","pinned": "flipInX","unpinned": "flipOutX"}});
+var headroom = new Headroom(elem, {"offset": 210,"tolerance": 5,"classes": {"initial": "animated","pinned": "swingInX","unpinned": "swingOutX"}});
+//var headroom = new Headroom(elem, {"offset": 0,"tolerance": 5,"classes": {"initial": "animated","pinned": "bounceInDown","unpinned": "bounceOutUp"}});
+headroom.init();
+
+// to destroy
+//headroom.destroy();

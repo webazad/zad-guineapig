@@ -6,12 +6,7 @@
 *-----------------------------------------------------------
 */
 get_header(); 
-function the_filter_clasess($id){
-    $cats = get_the_category($id);
-    foreach($cats as $cat){
-        echo $cat->slug . ' ';
-    }
-}
+
 $args = array(
     'post_type'         => 'post',
     'posts_per_page'    => '12',
@@ -22,21 +17,12 @@ $custom_query = new WP_Query($args);
 
     <!-- # SECTION BEGINS -->
     <section class="azad-section">
-    
-        <div class="button-group filter-button-group">
-            <button data-filter="*">show all</button>
-            <?php $categories = get_categories(); 
-            foreach($categories as $category) : ?>
-                <button data-filter=".<?php echo $category->slug; ?>"><?php echo $category->name; ?></button>
-            <?php endforeach; ?>
-        </div>
-
         <div class="azad-container azad-stretched grid">
         <?php if ( $custom_query->have_posts() ) : ?>
                 <?php while ( $custom_query->have_posts() ) : $custom_query->the_post(); ?>
 
-                    <figure class="grid-item <?php the_filter_clasess(get_the_id()); ?>" id="<?php echo get_the_id(); ?>">
-                        <h2><a href="<?php //the_permalink() ?>"><?php the_title(); ?></a></h2>
+                    <figure class="grid-item" id="<?php echo get_the_id(); ?>">
+                        <h2><a href="<?php //the_permalink() ?>"><?php //the_title(); ?></a></h2>
                         <!--div class="meta"><em>Posted on:</em> <?php //the_time('F jS, Y') ?><em>by</em> <?php //the_author() ?></div-->
                         <div class="featured_image">
                             <?php if(has_post_thumbnail()): ?>

@@ -90,15 +90,17 @@
                 <!-- THE WAY TO SHOW NAVIGATION -->
                 <?php 
                     if(function_exists('wp_nav_menu')){
-                        $defaults = array(
-                            'theme_location'  => 'responsive_slider_menu',
-                            'container'       => 'div',
-                            'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                            'show_toggles'   => true,
-                        );
-                        wp_nav_menu($defaults);
-                    }elseif(has_nav_menu('sidebar_widget_one')){
-                        echo "Pleas set the menu first";
+                        if(has_nav_menu('responsive_slider_menu')){
+                            $defaults = array(
+                                'theme_location'  => 'responsive_slider_menu',
+                                'container'       => 'div',
+                                'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                                'show_toggles'   => true,
+                            );
+                            wp_nav_menu($defaults);
+                        }else{
+                            echo '<ul><li><a href="">Pleas set the menu first</a><li></ul>';
+                        }
                     }
                 ?>
                 

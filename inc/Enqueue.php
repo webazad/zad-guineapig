@@ -21,11 +21,11 @@ if ( ! class_exists( 'Enqueue' ) ):
             wp_enqueue_style('main');
             
             wp_register_style('headroom',trailingslashit(get_template_directory_uri()).'assets/css/headroom.css',array(),AZAD_GUINEAPIG_VERSION,'all');
-            wp_enqueue_style('headroom');
+            //wp_enqueue_style('headroom');
 
             // LOAD JAVASCRIPTS
             wp_register_script('headroom',trailingslashit(get_template_directory_uri()).'assets/js/headroom.min.js',array('jquery'),AZAD_GUINEAPIG_VERSION,true);
-            wp_enqueue_script('headroom');
+            //wp_enqueue_script('headroom');
 
             
             wp_register_script('index',trailingslashit(get_template_directory_uri()).'assets/js/index.js',array('jquery'),AZAD_GUINEAPIG_VERSION,true);

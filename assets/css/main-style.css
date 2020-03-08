@@ -282,27 +282,19 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .azad-header .header-container .azad-nav .desktop-menus ul li {
+  position: relative;
   margin-left: 2.5rem;
-  position: relative;
-  line-height: 1.25;
-}
-
-.azad-header .header-container .azad-nav .desktop-menus ul li a {
-  color: #cd2653;
-  display: block;
-  padding-right: 1rem;
-  position: relative;
-  font-size: 1.5rem;
-}
-
-.azad-header .header-container .azad-nav .desktop-menus ul li a:hover {
-  text-decoration: underline;
 }
 
 .azad-header .header-container .azad-nav .desktop-menus ul li .icon {
@@ -337,10 +329,22 @@ a {
   width: 0.5rem;
 }
 
+.azad-header .header-container .azad-nav .desktop-menus ul li a {
+  color: var(--text);
+  padding: 0rem 1rem;
+  display: block;
+  width: 100%;
+}
+
+.azad-header .header-container .azad-nav .desktop-menus ul li a:hover {
+  text-decoration: underline;
+}
+
 .azad-header .header-container .azad-nav .desktop-menus ul li ul {
+  background: #000;
   border-radius: 0.4rem;
   color: #fff;
-  font-size: 1.7rem;
+  font-size: 1rem;
   opacity: 0;
   padding: 1rem 0;
   position: absolute;
@@ -352,32 +356,49 @@ a {
   transition: opacity 0.15s linear, transform 0.15s linear, right 0s 0.15s, -webkit-transform 0.15s linear;
   -webkit-transform: translateY(0.6rem);
           transform: translateY(0.6rem);
-  width: 13rem;
+  width: 14rem;
   z-index: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  height: auto;
-  background: #000;
+  display: initial;
+  text-align: left;
 }
 
 .azad-header .header-container .azad-nav .desktop-menus ul li ul li {
-  margin-left: 0;
+  margin: 0;
 }
 
 .azad-header .header-container .azad-nav .desktop-menus ul li ul li a {
-  display: block;
-  padding: .5rem;
-  color: #ffffff;
-  text-decoration: none !important;
+  padding: .5rem 1rem;
+  color: var(--white);
 }
 
-.azad-header .header-container .azad-nav .desktop-menus ul li ul li a:hover {
-  text-decoration: underline !important;
+.azad-header .header-container .azad-nav .desktop-menus ul li ul li:hover > ul {
+  right: calc(100% + 2rem);
+}
+
+.azad-header .header-container .azad-nav .desktop-menus ul li ul li .icon {
+  right: 1rem;
+  color: white;
+}
+
+.azad-header .header-container .azad-nav .desktop-menus ul li ul li ul {
+  top: -1rem;
+}
+
+.azad-header .header-container .azad-nav .desktop-menus ul li ul li ul:before {
+  top: 0;
+  height: auto;
+  width: 2rem;
+  left: auto;
+  right: -2rem;
+  bottom: 0;
+}
+
+.azad-header .header-container .azad-nav .desktop-menus ul li ul li ul:after {
+  border-bottom-color: transparent;
+  border-left-color: #000000;
+  top: 1.5rem;
+  right: -1.2rem;
+  bottom: auto;
 }
 
 .azad-header .header-container .azad-nav .desktop-menus ul li ul:before, .azad-header .header-container .azad-nav .desktop-menus ul li ul:after {
@@ -399,7 +420,7 @@ a {
   right: 1.8rem;
 }
 
-.azad-header .header-container .azad-nav .desktop-menus ul li:hover ul {
+.azad-header .header-container .azad-nav .desktop-menus ul li:hover > ul {
   right: 0;
   opacity: 1;
   -webkit-transform: translateY(0);
@@ -408,10 +429,6 @@ a {
   transition: opacity 0.15s linear, -webkit-transform 0.15s linear;
   transition: opacity 0.15s linear, transform 0.15s linear;
   transition: opacity 0.15s linear, transform 0.15s linear, -webkit-transform 0.15s linear;
-}
-
-.azad-header .header-container .azad-nav .desktop-menus ul .current-menu-item > a {
-  text-decoration: underline !important;
 }
 
 .azad-header .header-container .azad-nav .azad-search-button {
