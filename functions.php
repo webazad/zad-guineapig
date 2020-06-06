@@ -6,7 +6,7 @@
 *-----------------------------------------------------------
 */
 // EXIT IF ACCESSED DIRECTLY
-defined('ABSPATH') || exit;
+defined( 'ABSPATH' ) || exit;
 
 define( 'AZAD_GUINEAPIG_NAME', wp_get_theme()->get( 'Name' ) );
 define( 'AZAD_GUINEAPIG_VERSION', wp_get_theme()->get( 'Version' ) );
@@ -14,8 +14,8 @@ define( 'AZAD_GUINEAPIG_TEXTDOMAIN', wp_get_theme()->get( 'TextDomain' ) );
 define( 'AZAD_GUINEAPIG_DIR', trailingslashit( get_template_directory() ) );
 define( 'AZAD_GUINEAPIG_URI', trailingslashit( esc_url( get_template_directory_uri() ) ) );
 
-if(file_exists(dirname(__FILE__) . '/vendor/autoload.php')){
-    require_once dirname(__FILE__) . '/vendor/autoload.php';
+if ( file_exists( dirname( __FILE__ ) . '/vendor/autoload.php' ) ) {
+    require_once dirname( __FILE__ ) . '/vendor/autoload.php';
 }
 if ( class_exists( 'Inc\\Init' ) ) :    
     Inc\Init::register_services();
@@ -84,7 +84,7 @@ function azad_add_sub_toggles_to_main_menu( $args, $item, $depth ) {
 		if ( in_array( 'menu-item-has-children', $item->classes, true ) ) {
 
 			$toggle_target_string = '.menu-modal .menu-item-' . $item->ID . ' > .sub-menu';
-			$toggle_duration      = '';//twentytwenty_toggle_duration();
+			$toggle_duration      = azad_toggle_duration();
 
 			// Add the sub menu toggle.
 			$args->after .= '<button class="toggle sub-menu-toggle fill-children-current-color" data-toggle-target="' . $toggle_target_string . '" data-toggle-type="slidetoggle" data-toggle-duration="' . absint( $toggle_duration ) . '" aria-expanded="false"><span class="screen-reader-text">' . __( 'Show sub menu', 'twentytwenty' ) . '</span>' . azad_get_svg( 'chevron-down' ) . '</button>';
@@ -106,9 +106,14 @@ function azad_add_sub_toggles_to_main_menu( $args, $item, $depth ) {
 
 }
 
+function azad_toggle_duration() {
+	$duration = apply_filters( 'azad_toggle_duration', 250 );
+	return $duration;
+}
+
 add_filter( 'nav_menu_item_args', 'azad_add_sub_toggles_to_main_menu', 10, 3 );
 
-function azad_site_logo( $args = array(), $echo = true ){
+function azad_site_logo( $args = array(), $echo = true ) {
 	$logo = get_custom_logo();
 	$site_title = get_bloginfo('name');
 	$contents = '';
@@ -127,10 +132,10 @@ function azad_site_logo( $args = array(), $echo = true ){
 	$args = wp_parse_args( $args, $defaults );
 	$args = apply_filters( 'azad_site_logo_args', $args, $defaults );
 
-	if( has_custom_logo() ){
+	if ( has_custom_logo() ) {
 		$contents = sprintf( $args['logo'], $logo, esc_html( $site_title ) );
 		$classname = $args['logo_class'];
-	}else{
+	} else {
 		$contents = sprintf( $args['title'], esc_url( get_home_url( null, '/' ) ), esc_html( $site_title ) );
 		$classname = $args['title_class'];
 	}
@@ -141,10 +146,8 @@ function azad_site_logo( $args = array(), $echo = true ){
 
 	$html = apply_filters( 'azad_site_logo', $html, $args, $classname, $contents );
 
-	if( ! $echo ){
+	if ( ! $echo ) {
 		return $html;
 	}
 	echo $html;
 }
-
-

@@ -1,7 +1,7 @@
 /**
-*-----------------------------------------------------------------------------------------------------------------------------
+*------------------------------------------------
 *   = GLOBAL STYLE
-*-----------------------------------------------------------------------------------------------------------------------------
+*------------------------------------------------
 */
 :root {
     --ff: verdana;
@@ -9,27 +9,27 @@
     --padding-top: 5rem;
     --paddin-bottom: 5rem;
 }
-html{
-    font-size:100%;
+html {
+    font-size: 100%;
 }
 body {
     font: 1em/1.25em "Cabin", Helvetica, Arial, sans-serif;
     text-align: center;
-    color: var(--text-color);
+    color: var( --text-color );
 
     .big-wrapper {
-        background: var(--transparent);
+        background: var( --transparent );
         overflow: overlay;
         min-height: 100vh;
         position: relative;
         padding-bottom: 74px;
 
         & > section{
-            background:var(--transparent);
+            background: var( --transparent );
             margin-top: 5.3rem;
         }
         .azad-container {
-            width: var(--width);
+            width: var( --width );
             margin: 0 auto;
         }
         .azad-stretched {
@@ -41,5 +41,10 @@ body {
         }
     }   
 }
-ol, ul {list-style: none;}
-a{text-decoration: none;}
+ol,
+ul {
+    list-style: none;
+}
+a { 
+    text-decoration: none;
+} 
