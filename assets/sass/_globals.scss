@@ -9,9 +9,11 @@
     --padding-top: 5rem;
     --paddin-bottom: 5rem;
 }
+
 html {
     font-size: 100%;
 }
+
 body {
     font: 1em/1.25em "Cabin", Helvetica, Arial, sans-serif;
     text-align: center;
@@ -28,23 +30,28 @@ body {
             background: var( --transparent );
             margin-top: 5.3rem;
         }
+
         .azad-container {
             width: var( --width );
             margin: 0 auto;
         }
+
         .azad-stretched {
-            width: 100%;
+            //width: 100%;
         }
+        
         .azad-row {
             display: flex;
             overflow: overlay;
         }
     }   
 }
+
 ol,
 ul {
     list-style: none;
 }
+
 a { 
     text-decoration: none;
-} 
+}

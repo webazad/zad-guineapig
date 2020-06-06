@@ -1,24 +1,107 @@
 :root {
-  --text: rgba(0,186,186,1);
+  --text: rgba( 0, 186, 186, 1 );
   --menu-text: #222222;
-  --menu-text-hover: rgba(0,186,186,1);
-  --menu-bg: rgba(0,186,186,1);
-  --menu-bg-hover: rgba(0,186,186,1);
-  --bg: rgba(57,225,245,1);
-  --body: rgba(65,64,66,.8);
-  --border: rgba(227,227,227,1);
-  --white: rgba(255,255,255,1);
-  --black: rgba(0,0,0,1);
-  --tranparent: rgba(0,0,0,0);
+  --menu-text-hover: rgba( 0, 186, 186, 1 );
+  --menu-bg: rgba( 0, 186, 186, 1 );
+  --menu-bg-hover: rgba( 0, 186, 186, 1 );
+  --bg: rgba( 57, 225, 245, 1 );
+  --body: rgba( 65, 64, 66, .8 );
+  --border: rgba( 227, 227, 227, 1 );
+  --white: rgba( 255, 255, 255, 1 );
+  --black: rgba( 0, 0, 0, 1 );
+  --tranparent: rgba( 0, 0, 0, 0 );
   --border-radius: 3px;
 }
 
 /**
-*-----------------------------------------------------------------------------------------------------------------------------
+*------------------------------------------------
 * ::    RESET CODE
-*-----------------------------------------------------------------------------------------------------------------------------
+*------------------------------------------------
 */
-html, body, div, span, applet, object, iframe, pre, a, abbr, acronym, big, cite, code, del, dfn, ins, kbd, q, s, samp, small, strike, sub, sup, tt, var, b, u, i, hr, center, dl, dt, dd, fieldset, form, label, lagend, table, caption, thead, tbody, tfoot, th, tr, td, section, article, aside, header, hgroup, nav, menu, footer, h1, h2, h3, h4, h5, h6, p, blockquote, address, time, mark, span, em, strong, img, ol, ul, li, figure, figcaption, details, embed, canvas, audio, video, output, ruby, summary, input {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+pre,
+a,
+abbr,
+acronym,
+big,
+cite,
+code,
+del,
+dfn,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+hr,
+center,
+dl,
+dt,
+dd,
+fieldset,
+form,
+label,
+lagend,
+table,
+caption,
+thead,
+tbody,
+tfoot,
+th,
+tr,
+td,
+section,
+article,
+aside,
+header,
+hgroup,
+nav,
+menu,
+footer,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+address,
+time,
+mark,
+span,
+em,
+strong,
+img,
+ol,
+ul,
+li,
+figure,
+figcaption,
+details,
+embed,
+canvas,
+audio,
+video,
+output,
+ruby,
+summary,
+input {
   margin: 0;
   padding: 0;
   border: 0;
@@ -40,18 +123,35 @@ blockquote::after {
 }
 
 /**
-*-----------------------------------------------------------------------------------------------------------------------------
+*------------------------------------------------
 *   = HTML5 DISPLAY RULE
-*-----------------------------------------------------------------------------------------------------------------------------
+*------------------------------------------------
 */
-address, article, aside, canvas, details, figure, figure img, figcaption, footer, header, hgroup, menu, nav, section, summary, main, audio, video {
+address,
+article,
+aside,
+canvas,
+details,
+figure,
+figure img,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+main,
+audio,
+video {
   display: block;
 }
 
 /**
-*-----------------------------------------------------------------------------------------------------------------------------
+*------------------------------------------------
 *   = GLOBAL STYLE
-*-----------------------------------------------------------------------------------------------------------------------------
+*------------------------------------------------
 */
 :root {
   --ff: verdana;
@@ -88,10 +188,6 @@ body .big-wrapper .azad-container {
   margin: 0 auto;
 }
 
-body .big-wrapper .azad-stretched {
-  width: 100%;
-}
-
 body .big-wrapper .azad-row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -99,7 +195,8 @@ body .big-wrapper .azad-row {
   overflow: overlay;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
@@ -207,7 +304,7 @@ a {
 }
 
 .page-loaded.preloader {
-  left: calc(-100% - 200px);
+  left: calc( -100% - 200px);
   visibility: hidden;
 }
 
@@ -307,7 +404,7 @@ a {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
   right: -0.5rem;
-  top: calc(50% - 0.4rem);
+  top: calc( 50% - 0.4rem);
 }
 
 .azad-header .header-container .azad-nav .desktop-menus ul li .icon:before, .azad-header .header-container .azad-nav .desktop-menus ul li .icon:after {
@@ -315,7 +412,7 @@ a {
   display: block;
   background-color: currentColor;
   position: absolute;
-  bottom: calc(50% - 0.1rem);
+  bottom: calc( 50% - 0.1rem);
   left: 0;
 }
 
@@ -349,7 +446,7 @@ a {
   padding: 1rem 0;
   position: absolute;
   right: 9999rem;
-  top: calc(100% + 2rem);
+  top: calc( 100% + 2rem);
   -webkit-transition: opacity 0.15s linear, right 0s 0.15s, -webkit-transform 0.15s linear;
   transition: opacity 0.15s linear, right 0s 0.15s, -webkit-transform 0.15s linear;
   transition: opacity 0.15s linear, transform 0.15s linear, right 0s 0.15s;
@@ -372,7 +469,7 @@ a {
 }
 
 .azad-header .header-container .azad-nav .desktop-menus ul li ul li:hover > ul {
-  right: calc(100% + 1.5rem);
+  right: calc( 100% + 1.5rem);
 }
 
 .azad-header .header-container .azad-nav .desktop-menus ul li ul li .icon {
@@ -479,7 +576,7 @@ input[type="search"]:focus {
   margin-left: auto;
   margin-right: auto;
   max-width: 120rem;
-  width: calc(100% - 4rem);
+  width: calc( 100% - 4rem);
 }
 
 /* Toggles ----------------------------------- */
@@ -628,7 +725,7 @@ button.toggle {
   font-size: 1rem;
   font-weight: 600;
   position: absolute;
-  top: calc(100% + 0.5rem);
+  top: calc( 100% + 0.5rem);
   width: auto;
   white-space: nowrap;
   word-break: break-all;
@@ -1071,9 +1168,9 @@ button.search-untoggle {
   letter-spacing: -0.0277em;
   height: 8.4rem;
   margin: 0 0 0 -2rem;
-  max-width: calc(100% + 2rem);
+  max-width: calc( 100% + 2rem);
   padding: 0 0 0 2rem;
-  width: calc(100% + 2rem);
+  width: calc( 100% + 2rem);
 }
 
 .search-modal .search-field::-webkit-input-placeholder {

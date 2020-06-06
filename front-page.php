@@ -1,7 +1,7 @@
 <?php
 /**
 *-----------------------------------------------------------
-* :: @package azad-x
+* :: @package azad-guineapig
 * :: @version 1.0.0
 *-----------------------------------------------------------
 */
@@ -18,11 +18,11 @@ $custom_query = new WP_Query( $args );
     <!-- # SECTION BEGINS -->
     <section class="azad-section">
         <div class="azad-container azad-stretched grid">
-        <?php if ( $custom_query->have_posts() ) : ?>
+            <?php if ( $custom_query->have_posts() ) : ?>
                 <?php while ( $custom_query->have_posts() ) : $custom_query->the_post(); ?>
 
                     <figure class="grid-item" id="<?php echo get_the_id(); ?>">
-                        <h2><a href="<?php //the_permalink() ?>"><?php //the_title(); ?></a></h2>
+                        <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
                         <!--div class="meta"><em>Posted on:</em> <?php //the_time( 'F jS, Y' ) ?><em>by</em> <?php //the_author() ?></div-->
                         <div class="featured_image">
                             <?php if ( has_post_thumbnail() ) : ?>
@@ -32,7 +32,7 @@ $custom_query = new WP_Query( $args );
                             <?php endif; ?>
                         </div>
                         <div class="entry">
-                            <?php //the_content(); ?>
+                            <?php the_content(); ?>
                             <?php //read_more( 30 ); ?><!--a href="<?php //the_permalink(); ?>">read more</a-->
                         </div>
                         <!--div class="postmetadata">

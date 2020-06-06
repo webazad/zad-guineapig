@@ -101,10 +101,12 @@ input {
     -o-box-sizing: border-box;
     box-sizing: border-box;
 }
+
 blockquote::before,
 blockquote::after {
 	content: "";
 }
+
 /**
 *------------------------------------------------
 *   = HTML5 DISPLAY RULE
