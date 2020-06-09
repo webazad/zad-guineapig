@@ -6,12 +6,14 @@
 * :: TO REGISTER WIDGETS IN SIDEBARS OR IN FOOTER OR ANYWHERE IN THE PAGE 
 *------------------------------------------------
 */
-namespace Inc\Admin;
+namespace Azad_Guineapig\Admin;
 
 // EXIT IF ACCESSED DIRECTLY
 defined( 'ABSPATH' ) || exit;
-if ( ! class_exists( 'Azad_Widgets' ) ):
-    class Azad_Widgets{
+
+if ( ! class_exists( 'Azad_Widgets' ) ) :
+
+    class Azad_Widgets {
         public static $_instance = null;
         public function __construct() {
             add_action( 'widgets_init', array( $this, 'azad_register_widget' ) );

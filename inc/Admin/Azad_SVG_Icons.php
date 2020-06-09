@@ -5,11 +5,13 @@
 * :: @version 1.0.0
 *------------------------------------------------
 */
-namespace Inc\Admin;
+namespace Azad_Guineapig\Admin;
 
 // EXIT IF ACCESSED DIRECTLY
 defined( 'ABSPATH' ) || exit;
-if ( ! class_exists( 'Azad_SVG_Icons' ) ):
+
+if ( ! class_exists( 'Azad_SVG_Icons' ) ) :
+
     class Azad_SVG_Icons {
         public static $_instance = null;
         public function __construct() {}
@@ -224,7 +226,8 @@ if ( ! class_exists( 'Azad_SVG_Icons' ) ):
             return self::$_instance;
         }
         public function __destruct() {}
-    }
+	}
+	
 endif;
 
 if ( ! function_exists( 'load_azad_svg_icons' ) ) {

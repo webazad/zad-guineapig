@@ -5,13 +5,15 @@
 * :: @version 1.0.0
 *-----------------------------------------------------------
 */
-namespace Inc;
+namespace Azad_Guineapig;
 // EXIT IF ACCESSED DIRECTLY
 defined('ABSPATH') || exit;
-if ( ! class_exists( 'Init' ) ):
 
-     final class Init{
+if ( ! class_exists( 'Init' ) ) :
+
+     final class Init {
          public function __construct() {}
+
          public static function get_services() {
              return [
                 Azad_Supports::class,
@@ -21,6 +23,7 @@ if ( ! class_exists( 'Init' ) ):
                 Enqueue::class
             ];   
         }
+        
         public static function register_services() {
             foreach(self::get_services() as $class){
                 $service = self::instantiate($class);

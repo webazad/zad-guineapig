@@ -5,16 +5,20 @@
 * :: @version 1.0.0
 *-----------------------------------------------------------------------------
 */
-namespace Inc;
+namespace Azad_Guineapig;
 // EXIT IF ACCESSED DIRECTLY
 defined('ABSPATH') || exit;
-if ( ! class_exists( 'Enqueue' ) ):
-    class Enqueue{
+
+if ( ! class_exists( 'Enqueue' ) ) :
+
+    class Enqueue {
         public static $_instance = null;
         public function __construct() {
             add_action('wp_enqueue_scripts',array($this,'azad_enqueue_scripts'));
         }
-		public static function demo(){}
+
+        public static function demo(){}
+        
         public function azad_enqueue_scripts() {
             // LOAD STYLESHEETS
             wp_register_style('main',trailingslashit(get_template_directory_uri()).'assets/css/main-style.min.css',array(),AZAD_GUINEAPIG_VERSION,'all');

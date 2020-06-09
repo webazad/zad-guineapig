@@ -6,12 +6,13 @@
 * :: TO REGISTER WIDGETS IN SIDEBARS OR IN FOOTER OR ANYWHERE IN THE PAGE 
 *-----------------------------------------------------------------------------
 */
-namespace Inc\Admin;
+namespace Azad_Guineapig\Admin;
 
 // EXIT IF ACCESSED DIRECTLY
 defined( 'ABSPATH' ) || exit;
 
-if ( ! class_exists( 'Azad_Customizer' ) ):
+if ( ! class_exists( 'Azad_Customizer' ) ) :
+    
     class Azad_Customizer {
         private static $_instance;
         public function __construct() {
