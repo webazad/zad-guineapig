@@ -204,6 +204,22 @@ a {
   text-decoration: none;
 }
 
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  color: red;
+  word-wrap: normal !important;
+  word-break: normal;
+}
+
 .preloader {
   background: red;
   position: fixed;
@@ -335,7 +351,7 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 1rem 0;
+  padding: .5rem 0;
 }
 
 .azad-header .header-container .logo {
@@ -391,7 +407,7 @@ a {
 
 .azad-header .header-container .azad-nav .desktop-menus ul li {
   position: relative;
-  margin-left: 2.5rem;
+  margin-left: 1rem;
 }
 
 .azad-header .header-container .azad-nav .desktop-menus ul li .icon {
@@ -535,7 +551,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: 1.5rem;
+  _margin-left: 1.5rem;
 }
 
 @media only screen and (max-width: 767px), only screen and (max-device-width: 767px) {
@@ -680,7 +696,7 @@ button.toggle {
 
 /* Header Toggles ---------------------------- */
 .header-toggles {
-  display: none;
+  _display: none;
 }
 
 .header-inner .toggle {
@@ -722,10 +738,10 @@ button.toggle {
 
 .toggle-inner .toggle-text {
   color: #6d6d6d;
-  font-size: 1rem;
+  font-size: .8rem;
   font-weight: 600;
   position: absolute;
-  top: calc( 100% + 0.5rem);
+  top: calc( 100% + 0.01rem);
   width: auto;
   white-space: nowrap;
   word-break: break-all;
@@ -752,7 +768,7 @@ button.toggle {
 .search-toggle svg {
   height: 2.5rem;
   max-width: 2.3rem;
-  width: 2.3rem;
+  _width: 2.3rem;
 }
 
 /* Navigation Toggle ------------------------- */
@@ -767,16 +783,18 @@ button.toggle {
 .nav-toggle .toggle-icon,
 .nav-toggle svg {
   height: 0.8rem;
-  width: 2.6rem;
+  _width: 2.6rem;
 }
 
 .nav-toggle .toggle-inner {
-  padding-top: 0.8rem;
+  padding-top: 0.0rem;
 }
 
-/* -------------------------------------------------------------------------- */
-/*	5. Menu Modal
-/* -------------------------------------------------------------------------- */
+/*
+*----------------------------------
+*	5. Menu Modal
+*----------------------------------
+*/
 .menu-modal {
   background: #fff;
   display: none;
@@ -870,7 +888,11 @@ button.close-nav-toggle svg {
       flex-shrink: 0;
 }
 
-/* Main Menu --------------------------------- */
+/* 
+*----------------------------------
+* Main Menu
+*----------------------------------
+*/
 .modal-menu {
   position: relative;
 }
@@ -964,7 +986,11 @@ button.sub-menu-toggle.active svg {
   font-weight: 500;
 }
 
-/* Main menu animation ----------------------- */
+/*
+*----------------------------------
+* Main menu animation
+*----------------------------------
+*/
 .menu-wrapper .menu-item {
   position: relative;
 }
@@ -1038,7 +1064,11 @@ button.sub-menu-toggle.active svg {
   }
 }
 
-/* Expanded Menu ----------------------------- */
+/*
+*----------------------------------
+* Expanded Menu
+*----------------------------------
+*/
 .expanded-menu {
   display: none;
 }
@@ -1047,9 +1077,11 @@ button.sub-menu-toggle.active svg {
   display: block;
 }
 
-/* -------------------------------------------------------------------------- */
-/*	6. Search Modal
-/* -------------------------------------------------------------------------- */
+/*
+*----------------------------------
+*	6. Search Modal
+*----------------------------------
+*/
 .search-modal {
   background: rgba(0, 0, 0, 0.2);
   display: none;
@@ -1152,7 +1184,11 @@ button.search-untoggle {
           transform: scale(1.15);
 }
 
-/* Modal Search Form ------------------------- */
+/*
+*----------------------------------
+* Modal Search Form
+*----------------------------------
+*/
 .search-modal form {
   margin: 0;
   position: relative;
@@ -1207,8 +1243,8 @@ button.search-untoggle {
 
 @media (min-width: 1000px) {
   .azad-header .toggle {
-    height: 4.4rem;
-    padding: 0 3rem;
+    _height: 4.4rem;
+    padding: 0 2rem;
     position: relative;
     bottom: auto;
     left: auto;

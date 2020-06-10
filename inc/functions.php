@@ -47,7 +47,7 @@ if ( ! function_exists( 'azad_the_svg' ) ) {
 if ( ! function_exists( 'azad_get_svg' ) ) {
 	function azad_get_svg( $svg_name, $group = 'ui', $color = '' ) {
 		$svg = wp_kses(
-			Inc\Admin\Azad_SVG_Icons::get_svg( $svg_name, $group, $color ),
+			Azad_Guineapig\Admin\Azad_SVG_Icons::get_svg( $svg_name, $group, $color ),
 			array(
 				'svg'     => array(
 					'class'       => true,
@@ -105,7 +105,7 @@ function azad_add_sub_toggles_to_main_menu( $args, $item, $depth ) {
 		$args->after .= '</div><!-- .ancestor-wrapper -->';
 
 		// Add sub menu icons to the primary menu without toggles.
-	} elseif ( 'header_main_menu' === $args->theme_location ) {
+	} elseif ( 'desktop_horizontal' === $args->theme_location ) {
 		if ( in_array( 'menu-item-has-children', $item->classes, true ) ) {
 			$args->after = '<span class="icon"></span>';
 		} else {

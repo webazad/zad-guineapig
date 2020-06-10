@@ -48,16 +48,16 @@ if ( ! class_exists( 'Azad_Supports' ) ) :
             // 4.. MULTIPLE MENU REGISTER SYSTEM
             if ( function_exists( 'register_nav_menus' ) ) {
                 register_nav_menus( array(
-                    'header_main_menu'          => __( 'Header Main Menu', AZAD_GUINEAPIG_TEXTDOMAIN ),
-                    'header_stick_menu'         => __( 'Header Stick Menu', 'azad-x' ),
-                    'responsive_mobile_menu'    => __( 'Responsive Mobile Menu', AZAD_GUINEAPIG_TEXTDOMAIN ),
-                    'responsive_slider_menu'    => __( 'Responsive Slider Menu', AZAD_GUINEAPIG_TEXTDOMAIN ),
-                    'footer_menu'               => __( 'Footer Menu', AZAD_GUINEAPIG_TEXTDOMAIN ),
-                    'left_sidebar_menu'         => __( 'Left Sidebar Menu', AZAD_GUINEAPIG_TEXTDOMAIN ),
-                    'right_sidebar_menu'        => __( 'Right Sidebar Menu', AZAD_GUINEAPIG_TEXTDOMAIN ),
-                    'search_page_menu'          => __( 'Search Page Menu', AZAD_GUINEAPIG_TEXTDOMAIN ),
-                    'no_page_menu'              => __( '404 Page Menu', AZAD_GUINEAPIG_TEXTDOMAIN ),
-                    'expanded'                  => __( 'Expanded', AZAD_GUINEAPIG_TEXTDOMAIN )
+                    'desktop_horizontal'   	=> __( 'Desktop Horizontal Menu', AZAD_GUINEAPIG_TEXTDOMAIN ),
+                    'desktop_sticky' 		=> __( 'Desktop Sticky Menu', AZAD_GUINEAPIG_TEXTDOMAIN ),
+                    'desktop_expanded'  	=> __( 'Desktop Expanded Menu', AZAD_GUINEAPIG_TEXTDOMAIN ),
+                    'responsive_toggle'  	=> __( 'Responsive Toggle Menu', AZAD_GUINEAPIG_TEXTDOMAIN ),
+                    'responsive_expanded'	=> __( 'Responsive Expanded Menu', AZAD_GUINEAPIG_TEXTDOMAIN ),
+                    'footer'				=> __( 'Footer Menu', AZAD_GUINEAPIG_TEXTDOMAIN ),
+                    'left_sidebar'			=> __( 'Left Sidebar Menu', AZAD_GUINEAPIG_TEXTDOMAIN ),
+                    'right_sidebar'			=> __( 'Right Sidebar Menu', AZAD_GUINEAPIG_TEXTDOMAIN ),
+                    'search_page'			=> __( 'Search Page Menu', AZAD_GUINEAPIG_TEXTDOMAIN ),
+                    'no_page'				=> __( '404 Page Menu', AZAD_GUINEAPIG_TEXTDOMAIN )
                 ) );
             } 
         }

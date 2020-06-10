@@ -25,19 +25,16 @@
                 <div class="azad-container">
                     <div class="header-container">
                         <div class="logo">
-                            <?php
-                                azad_site_logo();
-                            ?>
+                            <hgroup><?php azad_site_logo(); ?></hgroup>
                             <div id="hamburger-menu" class="burger-button"><span></span></div>
                         </div>
                         <div class="azad-nav">
                             <nav class="desktop-menus">
                                 <!-- THE WAY TO SHOW NAVIGATION -->
-                                <?php
-								
+                                <?php								
                                     if ( function_exists( 'wp_nav_menu' ) ) {
                                         $defaults = array(
-											'theme_location'  => 'header_main_menu',
+											'theme_location'  => 'desktop_horizontal',
                                             'menu'            => '',
                                             'container'       => 'div',
                                             'container_class' => '',
@@ -55,24 +52,24 @@
                                             'walker'          => ''
                                         );
                                         wp_nav_menu( $defaults );
-                                    } elseif ( has_nav_menu( 'sidebar_widget_one' ) ) {
-                                        echo "Pleas set the menu first";
+                                    } else {
+                                        echo "Pleas set the menu to display here...";
                                     }
                                 ?>
                             </nav>
                             <?php
 								// Check whether the header search is activated in the customizer.
 								$enable_header_search = get_theme_mod( 'header_search_icon', true );								
-								if($enable_header_search) : ?>
+								if ( $enable_header_search ) : ?>
                                 <!-- SEARCH TOGGLE BUTTON BEGINS -->
                                 <div class="azad-search-button">
                                     <div class="toggle-wrapper nav-toggle-wrapper has-expanded-menu">
                                         <button class="toggle nav-toggle desktop-nav-toggle" data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
                                             <span class="toggle-inner">
-                                                <span class="toggle-text"><?php _e( 'Menu', 'twentytwenty' ); ?></span>
                                                 <span class="toggle-icon">
                                                     <?php azad_the_svg( 'ellipsis' ); ?>
                                                 </span>
+                                                <span class="toggle-text"><?php _e( 'Menu', 'twentytwenty' ); ?></span>
                                             </span>
                                         </button><!-- .nav-toggle -->
                                     </div><!-- .nav-toggle-wrapper -->
@@ -80,7 +77,7 @@
                                         <div class="toggle-wrapper search-toggle-wrapper">
                                             <button class="toggle search-toggle desktop-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
                                                 <span class="toggle-inner">
-                                                <?php azad_the_svg( 'search' ); ?>
+                                                    <?php azad_the_svg( 'search' ); ?>
                                                     <span class="toggle-text">Search</span>
                                                 </span>
                                             </button><!-- .search-toggle -->
