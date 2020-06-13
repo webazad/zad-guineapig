@@ -24,6 +24,12 @@
             <header class="azad-header header--fixed hide-from-print">
                 <div class="azad-container">
                     <div class="header-container">
+                        <?php
+                            // Check whether the header search is activated in the customizer.
+                            $enable_header_search = get_theme_mod( 'header_search_icon', true );
+                            if ( $enable_header_search ) : ?>
+                            <?php //azad_the_svg( 'search' ); ?>
+                        <?php endif; ?>
                         <div class="logo">
                             <hgroup><?php azad_site_logo(); ?></hgroup>
                             <div id="hamburger-menu" class="burger-button"><span></span></div>
@@ -57,22 +63,19 @@
                                     }
                                 ?>
                             </nav>
-                            <?php
-								// Check whether the header search is activated in the customizer.
-								$enable_header_search = get_theme_mod( 'header_search_icon', true );								
-								if ( $enable_header_search ) : ?>
-                                <!-- SEARCH TOGGLE BUTTON BEGINS -->
-                                <div class="azad-search-button">
-                                    <div class="toggle-wrapper nav-toggle-wrapper has-expanded-menu">
-                                        <button class="toggle nav-toggle desktop-nav-toggle" data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
-                                            <span class="toggle-inner">
-                                                <!-- <span class="toggle-icon"> -->
-                                                    <?php azad_the_svg( 'ellipsis' ); ?>
-                                                <!-- </span> -->
-                                                <span class="toggle-text"><?php _e( 'Menu', 'twentytwenty' ); ?></span>
-                                            </span>
-                                        </button><!-- .nav-toggle -->
-                                    </div><!-- .nav-toggle-wrapper -->
+                            <!-- SEARCH TOGGLE BUTTON BEGINS -->
+                            <div class="azad-search-button">
+                                <div class="toggle-wrapper nav-toggle-wrapper has-expanded-menu">
+                                    <button class="toggle nav-toggle desktop-nav-toggle" data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
+                                        <span class="toggle-inner">
+                                            <!-- <span class="toggle-icon"> -->
+                                                <?php azad_the_svg( 'ellipsis' ); ?>
+                                            <!-- </span> -->
+                                            <span class="toggle-text"><?php _e( 'Menu', 'twentytwenty' ); ?></span>
+                                        </span>
+                                    </button><!-- .nav-toggle -->
+                                </div><!-- .nav-toggle-wrapper -->
+                                <?php if ( $enable_header_search ) : ?>
                                     <div class="header-toggles hide-no-js">
                                         <div class="toggle-wrapper search-toggle-wrapper">
                                             <button class="toggle search-toggle desktop-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
@@ -83,16 +86,19 @@
                                             </button><!-- .search-toggle -->
                                         </div>
                                     </div>
-                                </div><!-- ends search toggle button -->
-                            <?php endif; ?>
+                                <?php endif; ?>
+                            </div><!-- ends search toggle button -->                            
                         </div>
+                        <!-- <span class="toggle-icon"> -->
+                        <?php //azad_the_svg( 'ellipsis' ); ?>
+                        <!-- </span> -->
                     </div>
                 </div>                
             </header>
             <?php
                 // Output the search modal (if it is activated in the customizer).
                 if ( true === $enable_header_search ) {
-                    //get_template_part( 'template-parts/modal-search' );
+                    get_template_part( 'template-parts/modal-search' );
                 }
             ?>              
             <!-- RESPONSIVE SLIDER MENUS BEGINS -->
