@@ -66,9 +66,9 @@
                                     <div class="toggle-wrapper nav-toggle-wrapper has-expanded-menu">
                                         <button class="toggle nav-toggle desktop-nav-toggle" data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
                                             <span class="toggle-inner">
-                                                <span class="toggle-icon">
+                                                <!-- <span class="toggle-icon"> -->
                                                     <?php azad_the_svg( 'ellipsis' ); ?>
-                                                </span>
+                                                <!-- </span> -->
                                                 <span class="toggle-text"><?php _e( 'Menu', 'twentytwenty' ); ?></span>
                                             </span>
                                         </button><!-- .nav-toggle -->
