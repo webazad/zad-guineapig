@@ -63,31 +63,27 @@
                                     }
                                 ?>
                             </nav>
-                            <!-- SEARCH TOGGLE BUTTON BEGINS -->
+                            <!-- ICON BUTTONS BEGIN -->
                             <div class="azad-search-button">
                                 <div class="toggle-wrapper nav-toggle-wrapper has-expanded-menu">
                                     <button class="toggle nav-toggle desktop-nav-toggle" data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
                                         <span class="toggle-inner">
-                                            <!-- <span class="toggle-icon"> -->
-                                                <?php azad_the_svg( 'ellipsis' ); ?>
-                                            <!-- </span> -->
-                                            <span class="toggle-text"><?php _e( 'Menu', 'twentytwenty' ); ?></span>
+                                            <?php azad_the_svg( 'ellipsis' ); ?>
+                                            <span class="toggle-text"><?php _e( 'Menu', 'azad-guineapig' ); ?></span>
                                         </span>
                                     </button><!-- .nav-toggle -->
                                 </div><!-- .nav-toggle-wrapper -->
-                                <?php if ( $enable_header_search ) : ?>
-                                    <div class="header-toggles hide-no-js">
-                                        <div class="toggle-wrapper search-toggle-wrapper">
-                                            <button class="toggle search-toggle desktop-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
-                                                <span class="toggle-inner">
-                                                    <?php azad_the_svg( 'search' ); ?>
-                                                    <span class="toggle-text">Search</span>
-                                                </span>
-                                            </button><!-- .search-toggle -->
-                                        </div>
-                                    </div>
+                                <?php if ( $enable_header_search ) : ?>                                    
+                                    <div class="toggle-wrapper search-toggle-wrapper">
+                                        <button class="toggle search-toggle desktop-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
+                                            <span class="toggle-inner">
+                                                <?php azad_the_svg( 'search' ); ?>
+                                                <span class="toggle-text"><?php _e( 'Search', 'azad-guineapig' ); ?></span>
+                                            </span>
+                                        </button><!-- .search-toggle -->
+                                    </div>           
                                 <?php endif; ?>
-                            </div><!-- ends search toggle button -->                            
+                            </div><!-- ends icon buttons -->                           
                         </div>
                         <!-- <span class="toggle-icon"> -->
                         <?php //azad_the_svg( 'ellipsis' ); ?>
