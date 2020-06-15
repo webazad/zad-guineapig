@@ -582,7 +582,7 @@ button.toggle .toggle-inner .toggle-text {
 
 .header-container .toggle:focus .toggle-text,
 .header-container .toggle:hover .toggle-text {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .overlay-header .toggle-text {
@@ -911,13 +911,18 @@ button.close-nav-toggle {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  padding: 3.1rem 0;
+  padding: 2rem 0;
   width: 100%;
 }
 
 button.close-nav-toggle svg {
-  height: 1.6rem;
-  width: 1.6rem;
+  height: 1.2rem;
+  width: 1.2rem;
+}
+
+button.close-nav-toggle .toggle-text {
+  margin-right: 1.6rem;
+  font-size: 1rem;
 }
 
 .menu-modal .menu-top {
@@ -932,7 +937,7 @@ button.close-nav-toggle svg {
 .modal-menu li {
   border-color: #dedfdf;
   border-style: solid;
-  border-width: 0.1rem 0 0 0;
+  border-width: 2px 0 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -944,13 +949,6 @@ button.close-nav-toggle svg {
           justify-content: flex-start;
   margin: 0;
   text-align: left;
-}
-
-.modal-menu > li > a,
-.modal-menu > li > .ancestor-wrapper > a {
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: -0.0375em;
 }
 
 .modal-menu > li:last-child {
@@ -969,7 +967,7 @@ button.close-nav-toggle svg {
 
 .modal-menu a {
   display: block;
-  padding: 2rem 2.5rem;
+  padding: 1rem 2.5rem;
   text-decoration: none;
   width: 100%;
 }
@@ -981,21 +979,25 @@ button.close-nav-toggle svg {
   text-decoration: underline;
 }
 
+.modal-menu > li > .ancestor-wrapper > button.sub-menu-toggle {
+  padding: 0 1.5rem;
+}
+
 button.sub-menu-toggle {
   border-left: 0.1rem solid #dedfdf;
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  margin: 1rem 0;
-  padding: 0 2.5rem;
+  padding: 0 1rem;
+  margin: 0;
 }
 
 button.sub-menu-toggle svg {
-  height: 0.9rem;
+  width: 1rem;
+  height: auto;
   -webkit-transition: -webkit-transform 0.15s linear;
   transition: -webkit-transform 0.15s linear;
   transition: transform 0.15s linear;
   transition: transform 0.15s linear, -webkit-transform 0.15s linear;
-  width: 1.5rem;
 }
 
 button.sub-menu-toggle.active svg {
@@ -1091,27 +1093,25 @@ button.sub-menu-toggle.active svg {
   }
 }
 
-.expanded-menu {
-  display: none;
-}
-
-.mobile-menu {
-  display: block;
-}
-
 /**
 *----------------------------------
 * MENU MODAL DESIGN
 *----------------------------------
 */
-@media (min-width: 700px) {
+@media only screen and (max-width: 767px), only screen and (max-device-width: 767px) {
   .modal-menu {
     left: auto;
     width: 100%;
   }
+  .expanded-menu {
+    display: block !important;
+  }
+  .mobile-menu {
+    display: none;
+  }
 }
 
-@media (min-width: 1000px) {
+@media only screen and (min-width: 1000px), only screen and (min-device-width: 1000px) {
   .menu-modal {
     opacity: 1;
     -webkit-box-pack: end;
@@ -1140,7 +1140,7 @@ button.sub-menu-toggle.active svg {
     transition: opacity 0.2s ease-in, -webkit-transform 0.2s ease-in;
     transition: transform 0.2s ease-in, opacity 0.2s ease-in;
     transition: transform 0.2s ease-in, opacity 0.2s ease-in, -webkit-transform 0.2s ease-in;
-    width: 35rem;
+    width: 25rem;
   }
   .menu-modal.active .menu-modal-inner {
     opacity: 1;
@@ -1153,7 +1153,7 @@ button.sub-menu-toggle.active svg {
     border-left-color: transparent;
   }
   .modal-menu > li > .ancestor-wrapper > a {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     padding: 1rem 0;
   }
 }
