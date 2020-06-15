@@ -24,15 +24,31 @@
             <header class="azad-header header--fixed hide-from-print">
                 <div class="azad-container">
                     <div class="header-container">
-                        <?php
-                            // Check whether the header search is activated in the customizer.
-                            $enable_header_search = get_theme_mod( 'header_search_icon', true );
-                            if ( $enable_header_search ) : ?>
-                            <?php //azad_the_svg( 'search' ); ?>
-                        <?php endif; ?>
-                        <div class="logo">
-                            <hgroup><?php azad_site_logo(); ?></hgroup>
-                            <div id="hamburger-menu" class="burger-button"><span></span></div>
+
+                        <div class="title-wrapper">
+                            <?php
+                                // Check whether the header search is activated in the customizer.
+                                $enable_header_search = get_theme_mod( 'header_search_icon', true );
+
+                                if ( true === $enable_header_search ) : ?>
+                                    <button class="toggle search-toggle responsive-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
+                                        <span class="toggle-inner">
+                                            <?php azad_the_svg( 'search' ); ?>
+                                            <span class="toggle-text"><?php _e( 'Search', 'azad-guineapig' ); ?></span>
+                                        </span>
+                                    </button>
+                            <?php endif; ?>
+                            <div class="logo">
+                                <hgroup><?php azad_site_logo(); ?></hgroup>
+                                <div id="hamburger-menu" class="burger-button"><span></span></div>
+                            </div>
+                            <!-- RESPONSIVE TOGGLE BUTTON BEGINS -->
+                            <button class="toggle nav-toggle responsive-nav-toggle" data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
+                                <span class="toggle-inner">
+                                    <?php azad_the_svg( 'ellipsis' ); ?>
+                                    <span class="toggle-text"><?php _e( 'Menu', 'azad-guineapig' ); ?></span>
+                                </span>
+                            </button><!-- ends responsive toggle button -->
                         </div>
                         <div class="azad-nav">
                             <nav class="desktop-menus">
@@ -63,48 +79,53 @@
                                     }
                                 ?>
                             </nav>
-                            <!-- ICON BUTTONS BEGIN -->
-                            <div class="azad-search-button">
-                                <div class="toggle-wrapper nav-toggle-wrapper has-expanded-menu">
-                                    <button class="toggle nav-toggle desktop-nav-toggle" data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
-                                        <span class="toggle-inner">
-                                            <?php azad_the_svg( 'ellipsis' ); ?>
-                                            <span class="toggle-text"><?php _e( 'Menu', 'azad-guineapig' ); ?></span>
-                                        </span>
-                                    </button><!-- .nav-toggle -->
-                                </div><!-- .nav-toggle-wrapper -->
-                                <?php if ( $enable_header_search ) : ?>                                    
-                                    <div class="toggle-wrapper search-toggle-wrapper">
-                                        <button class="toggle search-toggle desktop-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
-                                            <span class="toggle-inner">
-                                                <?php azad_the_svg( 'search' ); ?>
-                                                <span class="toggle-text"><?php _e( 'Search', 'azad-guineapig' ); ?></span>
-                                            </span>
-                                        </button><!-- .search-toggle -->
-                                    </div>           
-                                <?php endif; ?>
-                            </div><!-- ends icon buttons -->                           
-                        </div>
-                        <!-- <span class="toggle-icon"> -->
-                        <?php //azad_the_svg( 'ellipsis' ); ?>
-                        <!-- </span> -->
-                    </div>
-                </div>                
-            </header>
+                            
+                            <?php if ( true === $enable_header_search || has_nav_menu( 'desktop_expanded' ) ) : ?>                            
+                                <!-- ICON BUTTONS BEGIN -->
+                                <div class="azad-search-button">
+                                    <?php if ( has_nav_menu( 'desktop_expanded' ) ) : ?>                      
+                                        <div class="toggle-wrapper nav-toggle-wrapper has-expanded-menu">
+                                            <button class="toggle nav-toggle desktop-nav-toggle" data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
+                                                <span class="toggle-inner">
+                                                    <?php azad_the_svg( 'ellipsis' ); ?>
+                                                    <span class="toggle-text"><?php _e( 'Menu', 'azad-guineapig' ); ?></span>
+                                                </span>
+                                            </button><!-- .nav-toggle -->
+                                        </div><!-- .nav-toggle-wrapper -->
+                                    <?php endif; ?>
+                                    <?php if ( true === $enable_header_search ) : ?>                                   
+                                        <div class="toggle-wrapper search-toggle-wrapper">
+                                            <button class="toggle search-toggle desktop-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
+                                                <span class="toggle-inner">
+                                                    <?php azad_the_svg( 'search' ); ?>
+                                                    <span class="toggle-text"><?php _e( 'Search', 'azad-guineapig' ); ?></span>
+                                                </span>
+                                            </button><!-- .search-toggle -->
+                                        </div>           
+                                    <?php endif; ?>
+                                </div><!-- ends icon buttons -->                           
+                            <?php endif; ?>
+
+                        </div>                        
+                    </div><!-- ends header-container -->
+                </div><!-- ends azad-container -->
+            </header><!-- ends header -->
+
             <?php
                 // Output the search modal (if it is activated in the customizer).
                 if ( true === $enable_header_search ) {
                     get_template_part( 'template-parts/modal-search' );
                 }
-            ?>              
-            <!-- RESPONSIVE SLIDER MENUS BEGINS -->
+            ?>
+
+            <!-- RESPONSIVE SLIDER MENU BEGINS -->
             <nav class="mobile-menus">
                 <!-- THE WAY TO SHOW NAVIGATION -->
                 <?php 
                     // if ( function_exists('wp_nav_menu' ) ) {
-                    //     if ( has_nav_menu( 'responsive_slider_menu' ) ) {
+                    //     if ( has_nav_menu( 'responsive_toggle' ) ) {
                     //         $defaults = array(
-                    //             'theme_location'  => 'responsive_slider_menu',
+                    //             'theme_location'  => 'responsive_toggle',
                     //             'container'       => 'div',
                     //             'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
                     //             'show_toggles'   => true,
@@ -116,7 +137,8 @@
                     // }
                 ?>
                 
-            </nav><!-- ends responsive slider menus -->
+            </nav><!-- ends responsive slider menu -->
+
             <?php
-		// Output the menu modal.
-		get_template_part( 'template-parts/modal-menu' );
+                // Output the menu modal.
+                get_template_part( 'template-parts/modal-menu' );

@@ -239,7 +239,28 @@ a {
   padding: .5rem 0;
 }
 
-.azad-header .header-container .logo {
+.azad-header .header-container .title-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.azad-header .header-container .title-wrapper .responsive-search-toggle,
+.azad-header .header-container .title-wrapper .responsive-nav-toggle {
+  display: none;
+}
+
+.azad-header .header-container .title-wrapper .logo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -248,22 +269,22 @@ a {
           align-items: center;
 }
 
-.azad-header .header-container .logo h1 {
+.azad-header .header-container .title-wrapper .logo h1 {
+  line-height: 0rem;
+}
+
+.azad-header .header-container .title-wrapper .logo h1 a {
+  display: inline-block;
+  font-size: 2rem;
   line-height: 1rem;
 }
 
-.azad-header .header-container .logo h1 a {
-  display: inline-block;
-  font-size: 2rem;
-  line-height: 2rem;
-}
-
-.azad-header .header-container .logo h1 a img {
+.azad-header .header-container .title-wrapper .logo h1 a img {
   height: 52px;
   width: auto;
 }
 
-.azad-header .header-container .logo .burger-button {
+.azad-header .header-container .title-wrapper .logo .burger-button {
   display: none;
 }
 
@@ -429,17 +450,43 @@ a {
   transition: opacity 0.15s linear, transform 0.15s linear, -webkit-transform 0.15s linear;
 }
 
+.azad-header .header-container .azad-nav .azad-search-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: -32px;
+}
+
+.azad-header .header-container .azad-nav .azad-search-button .toggle-wrapper {
+  position: relative;
+}
+
+.azad-header .header-container .azad-nav .azad-search-button .toggle-wrapper:before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: .1rem;
+  height: 2rem;
+  background: #dedfdf;
+  left: 0;
+  top: calc( 50% - 1rem);
+}
+
 @media only screen and (max-width: 767px), only screen and (max-device-width: 767px) {
-  .preloader .inner .percentage {
-    font-size: 30vh;
-  }
   .azad-header .header-container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .azad-header .header-container .logo {
+  .azad-header .header-container .title-wrapper .responsive-search-toggle,
+  .azad-header .header-container .title-wrapper .responsive-nav-toggle {
+    display: block;
+  }
+  .azad-header .header-container .title-wrapper .logo {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -456,29 +503,42 @@ a {
 * Toggles
 *-----------------------------------------
 */
-.azad-search-button {
+button.toggle {
+  background: none;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: 0;
+  font-size: inherit;
+  font-weight: 400;
+  letter-spacing: inherit;
+  padding: 0;
+  text-transform: none;
+}
+
+button.toggle .toggle-inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-right: -32px;
 }
 
-.azad-search-button .toggle-wrapper {
-  position: relative;
-}
-
-.azad-search-button .toggle-wrapper:before {
-  content: '';
-  position: absolute;
-  display: block;
-  width: .1rem;
-  height: 2rem;
-  background: #dedfdf;
-  left: 0;
-  top: calc( 50% - 1rem);
+button.toggle .toggle-inner .toggle-text {
+  color: #6d6d6d;
+  font-size: .8rem;
+  font-weight: 600;
+  width: auto;
+  white-space: nowrap;
+  word-break: break-all;
 }
 
 .toggle {
@@ -497,20 +557,6 @@ a {
   user-select: none;
 }
 
-button.toggle {
-  background: none;
-  border: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  border-radius: 0;
-  font-size: inherit;
-  font-weight: 400;
-  letter-spacing: inherit;
-  padding: 0;
-  text-transform: none;
-}
-
-/* Navigation Toggle ------------------------- */
 .nav-toggle {
   width: 6.6rem;
   height: 2.5rem;
@@ -520,48 +566,22 @@ button.toggle {
   margin-top: .5rem;
 }
 
-/* Search Toggle ------------------------- */
 .search-toggle {
   width: 6.6rem;
   height: 2.5rem;
 }
 
-.header-inner .toggle path {
+.header-container .toggle path {
   fill: currentColor;
 }
 
-.toggle-inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.toggle-inner .toggle-text {
-  color: #6d6d6d;
-  font-size: .8rem;
-  font-weight: 600;
-  width: auto;
-  white-space: nowrap;
-  word-break: break-all;
+.header-container .toggle:focus .toggle-text,
+.header-container .toggle:hover .toggle-text {
+  text-decoration: underline;
 }
 
 .overlay-header .toggle-text {
   color: inherit;
-}
-
-.header-inner .toggle:focus .toggle-text,
-.header-inner .toggle:hover .toggle-text {
-  text-decoration: underline;
 }
 
 input[type="search"]::-webkit-search-decoration,
@@ -581,54 +601,6 @@ input[type="search"]:focus {
   margin-right: auto;
   max-width: 120rem;
   width: calc( 100% - 4rem);
-}
-
-/**
-*-----------------------------------------
-* Search Form
-*-----------------------------------------
-*/
-.search-form {
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  margin: 0 0 -0.8rem -0.8rem;
-}
-
-.search-form .search-field,
-.search-form .search-submit {
-  margin: 0 0 0.8rem 0.8rem;
-}
-
-.search-form label {
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: inherit;
-  margin: 0;
-  width: 100%;
-}
-
-.search-form .search-field {
-  width: 100%;
-}
-
-.search-form .search-submit {
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-}
-
-.search-form .search-submit:focus,
-.search-form .search-submit:hover {
-  text-decoration: none;
 }
 
 /**
@@ -961,8 +933,47 @@ button.sub-menu-toggle.active svg {
   z-index: 999;
 }
 
-.admin-bar .search-modal.active {
-  top: 32px;
+.search-form {
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  margin: 0 0 -0.8rem -0.8rem;
+}
+
+.search-form .search-field,
+.search-form .search-submit {
+  margin: 0 0 0.8rem 0.8rem;
+}
+
+.search-form label {
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: inherit;
+  margin: 0;
+  width: 100%;
+}
+
+.search-form .search-field {
+  width: 100%;
+}
+
+.search-form .search-submit {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.search-form .search-submit:focus,
+.search-form .search-submit:hover {
+  text-decoration: none;
 }
 
 @media (max-width: 782px) {
@@ -1049,11 +1060,10 @@ button.search-untoggle {
           transform: scale(1.15);
 }
 
-/*
-*----------------------------------
-* Modal Search Form
-*----------------------------------
-*/
+.admin-bar .search-modal.active {
+  top: 32px;
+}
+
 .search-modal form {
   margin: 0;
   position: relative;
@@ -1099,6 +1109,11 @@ button.search-untoggle {
   right: 0;
 }
 
+/*
+*----------------------------------
+* Menu modal design
+*----------------------------------
+*/
 @media (min-width: 700px) {
   .modal-menu {
     left: auto;

@@ -96,3 +96,11 @@
     margin-left: 100px;
     opacity: 0;
 }
+
+
+@media only screen and ( max-width: 767px ),
+only screen and ( max-device-width: 767px ) {
+    .preloader .inner .percentage {
+        font-size: 30vh;
+    }
+}

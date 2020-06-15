@@ -8,28 +8,40 @@
         justify-content: space-between;
         padding: .5rem 0;
 
-        .logo {
-            display: flex;
-            align-items: center;
+		.title-wrapper {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
 
-            h1 {
-                line-height: 1rem;
+			.responsive-search-toggle,
+			.responsive-nav-toggle {
+				display: none;
+			}
 
-                a {
-                    display: inline-block;
-                    font-size: 2rem;
-                    line-height: 2rem;
-                    img {
-                        height: 52px;
-                        width: auto;
-                    }
-                }
-            }
+			.logo {
+				display: flex;
+				align-items: center;
 
-            .burger-button {
-                display: none;
-            }
-        }
+				h1 {
+					line-height: 0rem;
+
+					a {
+						display: inline-block;
+						font-size: 2rem;
+						line-height: 1rem;
+						img {
+							height: 52px;
+							width: auto;
+						}
+					}
+				}
+
+				.burger-button {
+					display: none;
+				}
+			}
+		}
         // HEADER MAIN MENU
         .azad-nav {
             display: flex;
@@ -161,24 +173,49 @@
                         }
                     }
                 }                
-            } 
+            }
+
+			.azad-search-button {
+				display: flex;
+				align-items: center;
+				margin-right: -32px;
+
+				.toggle-wrapper {
+					position: relative;
+
+					&:before {
+						content: '';
+						position: absolute;
+						display: block;
+						width: .1rem;
+						height: 2rem;
+						background: #dedfdf;
+						left: 0;
+						top: calc( 50% - 1rem );
+					}
+				}
+			}
         }
     }
 }
 
 @media only screen and ( max-width: 767px ),
 only screen and ( max-device-width: 767px ) {
-    .preloader .inner .percentage {
-        font-size: 30vh;
-    }
 
     .azad-header {
         .header-container {
-            flex-direction: column;            
-            .logo {
-                justify-content: center;
-                position: relative;
-                padding: 1rem 0;
+            flex-direction: column;
+
+            .title-wrapper {
+				.responsive-search-toggle,
+				.responsive-nav-toggle {
+					display: block;
+				}
+                .logo {
+					justify-content: center;
+					position: relative;
+					padding: 1rem 0;
+				}
             }
             .azad-nav {
                 display: none;
@@ -192,26 +229,34 @@ only screen and ( max-device-width: 767px ) {
 * Toggles
 *-----------------------------------------
 */
-.azad-search-button {
-	display: flex;
-	align-items: center;
-	margin-right: -32px;
+button.toggle {
+	background: none;
+	border: none;
+	box-shadow: none;
+	border-radius: 0;
+	font-size: inherit;
+	font-weight: 400;
+	letter-spacing: inherit;
+	padding: 0;
+	text-transform: none;
 
-	.toggle-wrapper {
-		position: relative;
+	.toggle-inner {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
 
-		&:before {
-			content: '';
-			position: absolute;
-			display: block;
-			width: .1rem;
-			height: 2rem;
-			background: #dedfdf;
-			left: 0;
-			top: calc( 50% - 1rem );
+		.toggle-text {
+			color: #6d6d6d;
+			font-size: .8rem;
+			font-weight: 600;
+			width: auto;
+			white-space: nowrap;
+			word-break: break-all;
 		}
 	}
 }
+
 .toggle {
 	-moz-appearance: none;
 	-webkit-appearance: none;
@@ -228,19 +273,7 @@ only screen and ( max-device-width: 767px ) {
 	user-select: none;
 }
 
-button.toggle {
-	background: none;
-	border: none;
-	box-shadow: none;
-	border-radius: 0;
-	font-size: inherit;
-	font-weight: 400;
-	letter-spacing: inherit;
-	padding: 0;
-	text-transform: none;
-}
-
-/* Navigation Toggle ------------------------- */
+// Navigation Toggle
 .nav-toggle {
 	width: 6.6rem;
 	height: 2.5rem;
@@ -252,39 +285,25 @@ button.toggle {
 	}
 }
 
-/* Search Toggle ------------------------- */
+// Search Toggle
 .search-toggle {
 	width: 6.6rem;
 	height: 2.5rem;
 }
 
-.header-inner .toggle path {
+.header-container .toggle path {
 	fill: currentColor;
 }
 
-.toggle-inner {
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	align-items: center;
+.header-container .toggle:focus .toggle-text,
+.header-container .toggle:hover .toggle-text {
+	text-decoration: underline;
 }
 
-.toggle-inner .toggle-text {
-	color: #6d6d6d;
-	font-size: .8rem;
-	font-weight: 600;
-	width: auto;
-	white-space: nowrap;
-	word-break: break-all;
-}
 
+// Not 
 .overlay-header .toggle-text {
 	color: inherit;
-}
-
-.header-inner .toggle:focus .toggle-text,
-.header-inner .toggle:hover .toggle-text {
-	text-decoration: underline;
 }
 
 // NEW INFO
@@ -305,45 +324,6 @@ input[type="search"]:focus {
 	margin-right: auto;
 	max-width: 120rem;
 	width: calc( 100% - 4rem );
-}
-
-/**
-*-----------------------------------------
-* Search Form
-*-----------------------------------------
-*/
-
-.search-form {
-	align-items: stretch;
-	display: flex;
-	flex-wrap: nowrap;
-	margin: 0 0 -0.8rem -0.8rem;
-}
-
-.search-form .search-field,
-.search-form .search-submit {
-	margin: 0 0 0.8rem 0.8rem;
-}
-
-.search-form label {
-	align-items: stretch;
-	display: flex;
-	font-size: inherit;
-	margin: 0;
-	width: 100%;
-}
-
-.search-form .search-field {
-	width: 100%;
-}
-
-.search-form .search-submit {
-	flex-shrink: 0;
-}
-
-.search-form .search-submit:focus,
-.search-form .search-submit:hover {
-	text-decoration: none;
 }
 
 /**
@@ -471,7 +451,7 @@ button.close-nav-toggle .toggle-text {
 	line-height: 1;
 	justify-content: flex-start;
 	margin: 0;
-    text-align:left;
+	text-align:left;
 }
 
 .modal-menu > li > a,
@@ -642,8 +622,38 @@ button.sub-menu-toggle.active svg {
 	z-index: 999;
 }
 
-.admin-bar .search-modal.active {
-	top: 32px;
+// Search Form
+.search-form {
+	align-items: stretch;
+	display: flex;
+	flex-wrap: nowrap;
+	margin: 0 0 -0.8rem -0.8rem;
+}
+
+.search-form .search-field,
+.search-form .search-submit {
+	margin: 0 0 0.8rem 0.8rem;
+}
+
+.search-form label {
+	align-items: stretch;
+	display: flex;
+	font-size: inherit;
+	margin: 0;
+	width: 100%;
+}
+
+.search-form .search-field {
+	width: 100%;
+}
+
+.search-form .search-submit {
+	flex-shrink: 0;
+}
+
+.search-form .search-submit:focus,
+.search-form .search-submit:hover {
+	text-decoration: none;
 }
 
 @media ( max-width: 782px ) {
@@ -705,11 +715,11 @@ button.search-untoggle {
 	transform: scale( 1.15 );
 }
 
-/*
-*----------------------------------
-* Modal Search Form
-*----------------------------------
-*/
+.admin-bar .search-modal.active {
+	top: 32px;
+}
+
+// Modal Search Form
 .search-modal form {
 	margin: 0;
 	position: relative;
@@ -754,6 +764,11 @@ button.search-untoggle {
 	right: 0;
 }
 
+/*
+*----------------------------------
+* Menu modal design
+*----------------------------------
+*/
 @media ( min-width: 700px ) {
     .modal-menu {
 		left: auto;
@@ -762,16 +777,7 @@ button.search-untoggle {
 }
 
 @media ( min-width: 1000px ) {
-    // .azad-header .toggle {
-	// 	_height: 4.4rem;
-	// 	padding: 0 2rem;
-	// 	position: relative;
-	// 	bottom: auto;
-	// 	left: auto;
-	// 	right: auto;
-	// 	top: auto;
-	// 	width: auto;
-	// }
+
     .menu-modal {
 		opacity: 1;
 		justify-content: flex-end;
