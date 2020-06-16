@@ -514,6 +514,15 @@ input[type="search"]:focus {
 	outline-offset: -4px;
 }
 
+@media only screen and ( max-width: 767px ),
+only screen and ( max-device-width: 767px ) {
+	button.search-untoggle {
+		margin-right: -2.0rem;
+	}
+	.search-modal .search-field {
+		height: 6.4rem;
+	}
+}
 /**
 *----------------------------------
 *	MENU MODAL DESIGN
@@ -553,7 +562,7 @@ input[type="search"]:focus {
 	left: 0;
 	opacity: 1;
 	right: 0;
-	transition: opacity 0.25s ease-out;
+	transition: opacity 0.25s ease-out;	
 }
 
 .menu-modal-inner {
@@ -676,7 +685,7 @@ button.sub-menu-toggle.active svg {
 
 .modal-menu ul li {
 	border-left-width: 1rem;
-	//padding-left: 1rem;
+	// padding-left: 1rem;
 }
 
 .modal-menu ul li a {
@@ -767,18 +776,18 @@ only screen and ( max-device-width: 767px ) {
 	}
 
     .expanded-menu {
-		display: block !important;
+		display: none !important;
 		
 	}
 
 	.mobile-menu {
-		display: none;
+		display: block !important;
 	}	
 }
 
-@media only screen and ( min-width: 1000px ),
-only screen and ( min-device-width: 1000px ) {
-//@media ( min-width: 1000px ) {
+// @media only screen and ( min-width: 1000px ),
+// only screen and ( min-device-width: 1000px ) {
+@media ( min-width: 1000px ) {
 
     .menu-modal {
 		opacity: 1;
@@ -800,12 +809,13 @@ only screen and ( min-device-width: 1000px ) {
 		//width: calc( 100% - 8rem );
 	}
 
-    .menu-modal-inner {
+	.menu-modal-inner {
 		box-shadow: 0 0 2rem 0 rgba( 0, 0, 0, 0.1 );
 		opacity: 0;
 		padding: 0;
-		transform: translateX( 20rem );
-		transition: transform 0.2s ease-in, opacity 0.2s ease-in;
+		transform: translateX( 30rem );
+		// transition: transform 0.2s ease-in, opacity 0.2s ease-in;
+		transition: transform 0.3s ease-in, opacity 0.3s ease-in;
 		width: 25rem;
 	}
 
@@ -822,5 +832,109 @@ only screen and ( min-device-width: 1000px ) {
     .modal-menu > li > .ancestor-wrapper > a {
         font-size: 1.2rem;
         padding: 1rem 0;
-    }	
+    }
+
+	.expanded-menu {
+		display: block !important;
+
+		button:focus,
+		button:hover,
+		button:active,
+		button:visited {
+			outline: none;
+		}
+		
+	}
+
+	.mobile-menu {
+		display: none !important;
+	}
+}
+
+/**
+*----------------------------------
+* CART MODAL DESIGN
+*----------------------------------
+*/
+.cart-modal {
+	background: #fff;
+	display: none;
+	opacity: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+	position: fixed;
+	bottom: 0;
+	left: -99999rem;
+	right: 99999rem;
+	top: 0;
+	transition: opacity 0.25s ease-in, left 0s 0.25s, right 0s 0.25s;
+	z-index: 99;
+}
+
+.cart-modal.show-modal {
+	display: flex;
+}
+
+.cart-modal.active {
+	left: 0;
+	opacity: 1;
+	right: 0;
+	transition: opacity 0.25s ease-out;	
+}
+
+.cart-modal-inner {
+	background: #fff;
+	display: flex;
+	justify-content: stretch;
+	overflow: auto;
+	-ms-overflow-style: auto;
+	width: 100%;
+}
+
+.cart-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: relative;
+}
+
+@media only screen and ( max-width: 767px ),
+only screen and ( max-device-width: 767px ) {}
+
+// @media only screen and ( min-width: 1000px ),
+// only screen and ( min-device-width: 1000px ) {
+@media ( min-width: 1000px ) {
+
+    .cart-modal {
+		opacity: 1;
+		justify-content: flex-end;
+		padding: 0;
+		transition: background-color 0.3s ease-in, left 0s 0.3s, right 0s 0.3s;
+	}
+
+	.cart-modal.cover-modal {
+		background: rgba( 0, 0, 0, 0 );
+	}
+
+	.cart-modal.active {
+		background: rgba( 0, 0, 0, 0.2 );
+		transition: background-color 0.3s ease-out;
+	}
+
+	.cart-modal-inner {
+		box-shadow: 0 0 2rem 0 rgba( 0, 0, 0, 0.1 );
+		opacity: 0;
+		padding: 0;
+		transform: translateX( 25rem );
+		// transition: transform 0.2s ease-in, opacity 0.2s ease-in;
+		transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+		width: 25rem;
+	}
+
+    .cart-modal.active .cart-modal-inner {
+		opacity: 1;
+		transform: translateX( 0 );
+		transition-timing-function: ease-out;
+	}
+
 }

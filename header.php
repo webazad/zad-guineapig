@@ -80,10 +80,10 @@
                                 ?>
                             </nav>
                             
-                            <?php if ( true === $enable_header_search || has_nav_menu( 'desktop_expanded' ) ) : ?>                            
+                            <?php if ( true === $enable_header_search || has_nav_menu( 'desktop_expanded' ) ) : ?>
                                 <!-- ICON BUTTONS BEGIN -->
                                 <div class="azad-search-button">
-                                    <?php if ( has_nav_menu( 'desktop_expanded' ) ) : ?>                      
+                                    <?php if ( has_nav_menu( 'desktop_expanded' ) ) : ?>
                                         <div class="toggle-wrapper nav-toggle-wrapper has-expanded-menu">
                                             <button class="toggle nav-toggle desktop-nav-toggle" data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
                                                 <span class="toggle-inner">
@@ -92,8 +92,17 @@
                                                 </span>
                                             </button><!-- .nav-toggle -->
                                         </div><!-- .nav-toggle-wrapper -->
+
+                                        <div class="toggle-wrapper nav-toggle-wrapper has-expanded-menu">
+                                            <button class="toggle nav-toggle desktop-nav-toggle" data-toggle-target=".cart-modal" data-toggle-body-class="showing-cart-modal" aria-expanded="false" data-set-focus=".close-cart-toggle">
+                                                <span class="toggle-inner">
+                                                    <?php azad_the_svg( 'ellipsis' ); ?>
+                                                    <span class="toggle-text"><?php _e( 'Cart', 'azad-guineapig' ); ?></span>
+                                                </span>
+                                            </button><!-- .nav-toggle -->
+                                        </div><!-- .nav-toggle-wrapper -->
                                     <?php endif; ?>
-                                    <?php if ( true === $enable_header_search ) : ?>                                   
+                                    <?php if ( true === $enable_header_search ) : ?>
                                         <div class="toggle-wrapper search-toggle-wrapper">
                                             <button class="toggle search-toggle desktop-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
                                                 <span class="toggle-inner">
@@ -142,3 +151,6 @@
             <?php
                 // Output the menu modal.
                 get_template_part( 'template-parts/modal-menu' );
+                
+                // Output the menu modal.
+                get_template_part( 'template-parts/modal-cart' );

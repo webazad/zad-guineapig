@@ -27,8 +27,8 @@
 				// If the mobile menu location is not set, use the primary and expanded locations as fallbacks, in that order.
 				if ( has_nav_menu( 'responsive_toggle' ) ) {
 					$mobile_menu_location = 'responsive_toggle';
-				} elseif ( has_nav_menu( 'desktop_horizontal' ) ) {
-					$mobile_menu_location = 'desktop_horizontal';
+				} elseif ( has_nav_menu( 'responsive_expanded' ) ) {
+					$mobile_menu_location = 'responsive_expanded';
 				} elseif ( has_nav_menu( 'desktop_expanded' ) ) {
 					$mobile_menu_location = 'desktop_expanded';
 				}
@@ -73,29 +73,29 @@
 						<ul class="modal-menu reset-list-style">
 
 						<?php
-						// if ( $mobile_menu_location ) {
+						if ( $mobile_menu_location ) {
 
-							// wp_nav_menu(
-								// array(
-									// 'container'      => '',
-									// 'items_wrap'     => '%3$s',
-									// 'show_toggles'   => true,
-									// 'theme_location' => $mobile_menu_location,
-								// )
-							// );
+							wp_nav_menu(
+								array(
+									'container'      => '',
+									'items_wrap'     => '%3$s',
+									'show_toggles'   => true,
+									'theme_location' => $mobile_menu_location,
+								)
+							);
 
-						// } else {
+						} else {
 
-							// wp_list_pages(
-								// array(
-									// 'match_menu_classes' => true,
-									// 'show_toggles'       => true,
-									// 'title_li'           => false,
-									// 'walker'             => new TwentyTwenty_Walker_Page(),
-								// )
-							// );
+							wp_list_pages(
+								array(
+									'match_menu_classes' => true,
+									'show_toggles'       => true,
+									'title_li'           => false,
+									'walker'             => new TwentyTwenty_Walker_Page(),
+								)
+							);
 
-						// }
+						}
 						?>
 
 						</ul>
