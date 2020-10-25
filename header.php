@@ -40,7 +40,6 @@
                             <?php endif; ?>
                             <div class="logo">
                                 <hgroup><?php azad_site_logo(); ?></hgroup>
-                                <div id="hamburger-menu" class="burger-button"><span></span></div>
                             </div>
                             <!-- RESPONSIVE TOGGLE BUTTON BEGINS -->
                             <button class="toggle nav-toggle responsive-nav-toggle" data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
@@ -101,6 +100,24 @@
                                                 </span>
                                             </button><!-- .nav-toggle -->
                                         </div><!-- .nav-toggle-wrapper -->
+										
+										<div class="toggle-wrapper nav-toggle-wrapper has-expanded-menu">
+                                            <button class="toggle nav-toggle desktop-nav-toggle" data-toggle-target=".cart-modal" data-toggle-body-class="showing-cart-modal" aria-expanded="false" data-set-focus=".close-cart-toggle">
+                                                <span class="toggle-inner">
+                                                    <?php azad_the_svg( 'user' ); ?>
+                                                    <span class="toggle-text"><?php _e( 'User', 'azad-guineapig' ); ?></span>
+                                                </span>
+                                            </button><!-- .nav-toggle -->
+                                        </div><!-- .nav-toggle-wrapper -->
+										
+										<div class="toggle-wrapper nav-toggle-wrapper has-expanded-menu">
+                                            <button class="toggle nav-toggle desktop-nav-toggle" data-toggle-target=".cart-modal" data-toggle-body-class="showing-cart-modal" aria-expanded="false" data-set-focus=".close-cart-toggle">
+                                                <span class="toggle-inner">
+                                                    <?php azad_the_svg( 'user' ); ?>
+                                                    <span class="toggle-text"><?php _e( 'Image', 'azad-guineapig' ); ?></span>
+                                                </span>
+                                            </button><!-- .nav-toggle -->
+                                        </div><!-- .nav-toggle-wrapper -->
                                     <?php endif; ?>
                                     <?php if ( true === $enable_header_search ) : ?>
                                         <div class="toggle-wrapper search-toggle-wrapper">
@@ -115,7 +132,7 @@
                                 </div><!-- ends icon buttons -->                           
                             <?php endif; ?>
 
-                        </div>                        
+                        </div><!-- ends azad-nav -->
                     </div><!-- ends header-container -->
                 </div><!-- ends azad-container -->
             </header><!-- ends header -->
@@ -150,7 +167,7 @@
 
             <?php
                 // Output the menu modal.
-                get_template_part( 'template-parts/modal-menu' );
+                //get_template_part( 'template-parts/modal-menu' );
                 
-                // Output the menu modal.
+                // Output the cart modal.
                 get_template_part( 'template-parts/modal-cart' );

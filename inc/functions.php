@@ -39,12 +39,15 @@ function azad_site_logo( $args = array(), $echo = true ) {
 }
 
 if ( ! function_exists( 'azad_the_svg' ) ) {
+
 	function azad_the_svg( $svg_name, $group = 'ui', $color = '' ) {
 		echo azad_get_svg( $svg_name, $group, $color );
 	}
+
 }
 
 if ( ! function_exists( 'azad_get_svg' ) ) {
+
 	function azad_get_svg( $svg_name, $group = 'ui', $color = '' ) {
 		$svg = wp_kses(
 			Azad_Guineapig\Admin\Azad_SVG_Icons::get_svg( $svg_name, $group, $color ),
@@ -80,6 +83,7 @@ if ( ! function_exists( 'azad_get_svg' ) ) {
 		}
 		return $svg;
 	}
+
 }
 
 function azad_add_sub_toggles_to_main_menu( $args, $item, $depth ) {
@@ -122,4 +126,26 @@ add_filter( 'nav_menu_item_args', 'azad_add_sub_toggles_to_main_menu', 10, 3 );
 function azad_toggle_duration() {
 	$duration = apply_filters( 'azad_toggle_duration', 250 );
 	return $duration;
+}
+
+// FOR CUSTOM WOOCOMMERCE MENU ICON
+if ( ! function_exists( 'azad_woo_is_woocommerce_activated' ) ) {
+	
+	function azad_woo_is_woocommerce_activated() {
+		return class_exists( 'woocommerce' ) ? true : false;
+	}
+	
+}
+
+if ( ! function_exists( 'azad_woo_menus' ) ) {
+
+	function azad_woo_menus() {
+		global $woocommerce;
+		$count = 0;
+		if ( azad_woo_is_woocommerce_activated() ) {
+			$count = $woocommerce->cart->cart_contents_count;
+		}
+		echo $count;
+	}
+	
 }

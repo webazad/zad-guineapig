@@ -20,7 +20,7 @@
 					<?php azad_the_svg( 'cross' ); ?>
 				</button><!-- .nav-toggle -->
 				
-				Cart
+				<?php do_action( 'azad_woo_mini_cart' ); ?>
 
 			</div><!-- .menu-top -->
 

@@ -58,7 +58,7 @@ var Azad = {};
     $document.ready(function(){
         Azad.azad_pre_loader();
         Azad.azad_burger_button();
-        Azad.audio_player();
+        // Azad.audio_player();
     });
 
 })(jQuery);

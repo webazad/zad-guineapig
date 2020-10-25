@@ -21,10 +21,9 @@ body {
 
     .big-wrapper {
         background: var( --transparent );
-        overflow: overlay;
+        display: flex;
+        flex-direction: column;
         min-height: 100vh;
-        position: relative;
-        padding-bottom: 74px;
 
         & > section{
             background: var( --transparent );
