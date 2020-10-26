@@ -7,7 +7,7 @@
 */
 namespace Azad_Guineapig;
 // EXIT IF ACCESSED DIRECTLY
-defined('ABSPATH') || exit;
+defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'Init' ) ) :
 
@@ -20,6 +20,7 @@ if ( ! class_exists( 'Init' ) ) :
                 Admin\Azad_Customizer::class,
                 Admin\Azad_Widgets::class,
                 Admin\Azad_SVG_Icons::class,
+                Front\Azad_Shortcodes::class,
                 Enqueue::class
             ];   
         }
