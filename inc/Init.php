@@ -21,6 +21,7 @@ if ( ! class_exists( 'Init' ) ) :
                 Admin\Azad_Widgets::class,
                 Admin\Azad_SVG_Icons::class,
                 Front\Azad_Shortcodes::class,
+                Front\Azad_Vc::class,
                 Enqueue::class
             ];   
         }
