@@ -22,23 +22,59 @@ if ( ! class_exists( 'Enqueue' ) ) :
         
         public function azad_enqueue_scripts() {
             // LOAD STYLESHEETS
-            wp_register_style( 'main', trailingslashit( get_template_directory_uri() ) . 'assets/css/main-style.min.css', array(), AZAD_GUINEAPIG_VERSION, 'all' );
+            wp_register_style(
+                'main',
+                trailingslashit( get_template_directory_uri() ) . 'assets/css/main-style.min.css',
+                array(),
+                AZAD_GUINEAPIG_VERSION,
+                'all'
+            );
             wp_enqueue_style( 'main' );
             
-            wp_register_style( 'headroom', trailingslashit( get_template_directory_uri() ) . 'assets/css/headroom.css', array(), AZAD_GUINEAPIG_VERSION, 'all' );
+            wp_register_style(
+                'headroom',
+                trailingslashit( get_template_directory_uri() ) . 'assets/css/headroom.css',
+                array(),
+                AZAD_GUINEAPIG_VERSION,
+                'all'
+            );
             //wp_enqueue_style( 'headroom' );
 
             // LOAD JAVASCRIPTS
-            wp_register_script( 'headroom', trailingslashit( get_template_directory_uri() ) . 'assets/js/headroom.min.js', array( 'jquery' ), AZAD_GUINEAPIG_VERSION, true );
+            wp_register_script(
+                'headroom',
+                trailingslashit( get_template_directory_uri() ) . 'assets/js/headroom.min.js',
+                array( 'jquery' ),
+                AZAD_GUINEAPIG_VERSION,
+                true
+            );
             //wp_enqueue_script( 'headroom' );
             
-            wp_register_script( 'toggles', trailingslashit( get_template_directory_uri() ) . 'assets/js/toggles.js', array( 'jquery' ), AZAD_GUINEAPIG_VERSION, true );
+            wp_register_script(
+                'toggles',
+                trailingslashit( get_template_directory_uri() ) . 'assets/js/toggles.js',
+                array( 'jquery' ),
+                AZAD_GUINEAPIG_VERSION,
+                true
+            );
             wp_enqueue_script( 'toggles' );
             
-            wp_register_script( 'isotope', trailingslashit( get_template_directory_uri() ) . 'assets/js/isotope.pkgd.min.js', array( 'jquery' ), AZAD_GUINEAPIG_VERSION, true );
+            wp_register_script(
+                'isotope',
+                trailingslashit( get_template_directory_uri() ) . 'assets/js/isotope.pkgd.min.js',
+                array( 'jquery' ),
+                AZAD_GUINEAPIG_VERSION,
+                true
+            );
             wp_enqueue_script( 'isotope' );
 
-            wp_register_script( 'activation', trailingslashit( get_template_directory_uri() ) . 'assets/js/activation.js', array( 'jquery', 'isotope' ), AZAD_GUINEAPIG_VERSION, true );
+            wp_register_script(
+                'activation',
+                trailingslashit( get_template_directory_uri() ) . 'assets/js/activation.js',
+                array( 'jquery', 'isotope' ),
+                AZAD_GUINEAPIG_VERSION,
+                true
+            );
             wp_enqueue_script( 'activation' );            
         }
 

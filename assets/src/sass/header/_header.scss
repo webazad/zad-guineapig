@@ -4,43 +4,48 @@
 *-----------------------------------------
 */
 .azad-header {
-    background: white;
+    // background: red;
     border-bottom: 1px solid var( --border );
 
     .header-container {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        padding: .5rem 0;
+        padding: 1rem 0;
 
-		.title-wrapper {
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			justify-content: space-between;
-
-			.responsive-search-toggle,
-			.responsive-nav-toggle {
-				display: none;
-			}
-
+		.logo-wrapper {
+			
 			.logo {
-				display: flex;
-				align-items: center;
+				
+				hgroup {
+					line-height: 0;
 
-				h1 {
-					line-height: 0rem;
+					h1 {
 
+						a {
+							display: inline-block;
+							font-size: 2rem;
+							line-height: 1rem;
+							
+							img {
+								height: 80px;
+								width: auto;
+							}
+						}
+					}
 					a {
 						display: inline-block;
-						font-size: 2rem;
-						line-height: 1rem;
+						
 						img {
-							height: 52px;
+							height: 80px;
 							width: auto;
 						}
 					}
 				}
+			}
+			.responsive-search-toggle,
+			.responsive-nav-toggle {
+				display: none;
 			}
 		}
         // HEADER MAIN MENU
@@ -205,17 +210,42 @@ only screen and ( max-device-width: 767px ) {
 
     .azad-header {
         .header-container {
+			padding: .5rem 0;
             flex-direction: column;
 
-            .title-wrapper {
+            .logo-wrapper {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: space-between;
+
 				.responsive-search-toggle,
 				.responsive-nav-toggle {
 					display: block;
 				}
                 .logo {
-					justify-content: center;
-					position: relative;
-					padding: 1rem 0;
+					hgroup {
+
+						h1 {
+
+							a {
+								display: inline-block;
+								
+								img {
+									height: 75px;
+									width: auto;
+								}
+							}
+						}
+						a {
+							display: inline-block;
+							
+							img {
+								height: 75px;
+								width: auto;
+							}
+						}
+					}
 				}
             }
             .azad-nav {

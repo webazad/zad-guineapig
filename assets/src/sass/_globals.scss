@@ -12,38 +12,70 @@
 
 html {
     font-size: 100%;
+    background: rgba( 255, 255, 255, 0.8 );
+
+    body {
+        font: 1em/1.25em "Cabin", Helvetica, Arial, sans-serif;
+        // line-height: 1.2em;
+        font: 14px/21px "Cabin", Helvetica, Arial, sans-serif; 
+        color: #ffffff; 
+        text-align: center; 
+        -webkit-font-smoothing: antialiased; /* Chrome Suffery     */
+        -moz-font-smoothing: antialiased; 	 /* Firefox            */
+        -ms-font-smoothing: antialiased; 	 /* Internet Explorer  */
+        -o-font-smoothing: antialiased; 	 /* Opera              */
+        font-smoothing: antialiased; 		 /* Official           */ 
+        color: var( --text-color );
+
+        main {
+            background: var( --transparent );
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+
+            & > section{
+                background: var( --transparent );
+                margin-top: 5.3rem;
+            }
+
+            .azad-container {
+                width: var( --width );
+                margin: 0 auto;
+            }
+            .azad-container {
+                width: calc( 100% - 15rem );
+                margin: 0 auto;
+            }
+
+            .azad-stretched {
+                //width: 100%;
+            }
+            
+            .azad-row {
+                display: flex;
+                overflow: overlay;
+            }
+        }   
+    }
 }
 
-body {
-    font: 1em/1.25em "Cabin", Helvetica, Arial, sans-serif;
-    text-align: center;
-    color: var( --text-color );
+@media only screen and (max-width: 767px),
+only screen and ( max-device-width: 767px ) {
 
-    .big-wrapper {
-        background: var( --transparent );
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
+    html {
 
-        & > section{
-            background: var( --transparent );
-            margin-top: 5.3rem;
-        }
+        body {
 
-        .azad-container {
-            width: var( --width );
-            margin: 0 auto;
-        }
+            main {
 
-        .azad-stretched {
-            //width: 100%;
+                .azad-container {
+                    width: calc( 100% - 2rem );
+                    margin: 0 auto;
+                }
+            }   
         }
-        
-        .azad-row {
-            display: flex;
-            overflow: overlay;
-        }
-    }   
+    }
+
 }
 
 ol,

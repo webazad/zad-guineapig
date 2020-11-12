@@ -20,12 +20,12 @@
     <body <?php body_class(); ?>>
 
         <!-- BIG WRAPPER BEGINS -->
-        <div class="big-wrapper">
+        <main class="big-wrapper">
             <header class="azad-header header--fixed hide-from-print">
                 <div class="azad-container">
                     <div class="header-container">
 
-                        <div class="title-wrapper">
+                        <div class="logo-wrapper">
                             <?php
                                 // Check whether the header search is activated in the customizer.
                                 $enable_header_search = get_theme_mod( 'header_search_icon', true );

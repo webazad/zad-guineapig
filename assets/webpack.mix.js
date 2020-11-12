@@ -13,7 +13,10 @@ let mix = require('laravel-mix');
 
 mix.js('src/scripts/index.js', 'js/index.min.js')
 .sass('src/sass/main-style.scss', 'css/main-style.min.css')
-.sourceMaps();
+.sourceMaps()
+.browserSync({
+    proxy:'http://localhost/guineapig'
+});
 
 // Full API
 // mix.js(src, output);
