@@ -3,13 +3,6 @@
 *   = GLOBAL STYLE
 *------------------------------------------------
 */
-:root {
-    --ff: verdana;
-    --width: 85vw;
-    --padding-top: 5rem;
-    --paddin-bottom: 5rem;
-}
-
 html {
     font-size: 100%;
     background: rgba( 255, 255, 255, 0.8 );
@@ -31,16 +24,12 @@ html {
             background: var( --transparent );
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
             min-height: 100vh;
 
             & > section{
                 background: var( --transparent );
                 margin-top: 5.3rem;
-            }
-
-            .azad-container {
-                width: var( --width );
-                margin: 0 auto;
             }
             .azad-container {
                 width: calc( 100% - 15rem );

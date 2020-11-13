@@ -1,40 +1,81 @@
-.azad-footer {
-    margin-top: auto;
+/**
+* :: FOOTER DESIGN
+*/
+footer.azad-footer {
+    // margin-top: auto;
     text-align: center;
-    padding: 1rem 0;
     border-top: 1px solid var( --border );
 
-    .footer-container {
-        display: flex;
-        flex-direction:row;
-        align-items: center;
+    .footer-top-container {
+        display: grid;
+        grid-gap: 5rem;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding: 2rem 0 2rem;
 
-        .footer-left {
-            width: 100%;
-            text-align: left;
-        }
-        .footer-right {
-            width: 100%;
-            text-align: right;
+        .azad-footer-widget {
+            h3 {
+                color: var(--footer-title-color);
+                margin-bottom: 1.2rem;
+                font-size: 1.3rem;
+                text-transform: uppercase;
+            }
+            ul {
+                li {
+                    margin: .5rem 0;
+
+                    a {
+                        color: var(--footer-link-color);
+                        text-transform: uppercase;
+                        display: block;
+                    }
+                }
+            }
+
+            p {
+                margin-bottom: .5rem;
+                color: var(--footer-link-color);
+            }
+            
         }
     }
+
+    .copyright-container {
+        text-align: center;
+        padding: 1rem 0 1rem;
+
+        p {
+            color: var(--menu-text);
+            a {
+                color: var(--footer-title-color);
+            }
+        }
+
+    }
+
 }
 
 @media only screen and ( max-width: 767px ),
 only screen and ( max-device-width: 767px ) {
-    .azad-footer {
-        .footer-container {
-            flex-direction: column;
-            flex-flow: wrap-reverse;
 
-            .footer-left {
-                width: 100%;
-                margin-top: 20px;
-            }
-            .footer-right {
-                width: 100%;
-                text-align: left;
-            }
+    footer.azad-footer {
+
+        .footer-top-container {
+            grid-gap: 1rem;
+            grid-template-columns: 1fr;
+            padding: 4rem 0 0rem;
         }
+
+        .copyright-container {
+
+            p {
+                color: var(--menu-text);
+                a {
+                    color: var(--footer-title-color);
+                }
+            }
+
+        }
+        
     }
+
 }

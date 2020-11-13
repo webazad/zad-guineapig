@@ -1,9 +1,9 @@
 <?php
 /**
-*-------------------------------------------------------
+*--------------------------
 * :: @package azad-x
 * :: @version 1.0.0
-*-------------------------------------------------------
+*--------------------------
 */
 namespace Azad_Guineapig;
 
@@ -70,7 +70,7 @@ if ( ! class_exists( 'Enqueue' ) ) :
 
             wp_register_script(
                 'activation',
-                trailingslashit( get_template_directory_uri() ) . 'assets/js/activation.js',
+                trailingslashit( get_template_directory_uri() ) . 'assets/js/activation.min.js',
                 array( 'jquery', 'isotope' ),
                 AZAD_GUINEAPIG_VERSION,
                 true
