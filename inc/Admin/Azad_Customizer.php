@@ -246,7 +246,7 @@ if ( ! class_exists( 'Azad_Customizer' ) ) :
                 'settings'          => 'copyright_bg_color',    
             ) ) );
             $wp_customize->add_control( new \WP_Customize_Color_Control( $wp_customize, 'copyright_text_color', array(
-                'label'             => 'Select Footer Text Color',
+                'label'             => 'Select Copyright Text Color',
                 'description'       => 'Select color here...',        
                 'section'           => 'copyright_section',
                 'settings'          => 'copyright_text_color',    

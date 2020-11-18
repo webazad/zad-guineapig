@@ -52,7 +52,7 @@ if ( ! class_exists( 'Enqueue' ) ) :
             
             wp_register_script(
                 'toggles',
-                trailingslashit( get_template_directory_uri() ) . 'assets/js/toggles.js',
+                trailingslashit( get_template_directory_uri() ) . 'assets/js/toggles.min.js',
                 array( 'jquery' ),
                 AZAD_GUINEAPIG_VERSION,
                 true

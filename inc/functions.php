@@ -128,6 +128,10 @@ function azad_toggle_duration() {
 	return $duration;
 }
 
+//
+function azad_menu_fb(){
+	echo '<ul><li><a href="' . home_url( '/' ) . 'wp-admin/nav-menus.php">Assign a menu</a></li></ul>';
+}
 // FOR CUSTOM WOOCOMMERCE MENU ICON
 if ( ! function_exists( 'azad_woo_is_woocommerce_activated' ) ) {
 	

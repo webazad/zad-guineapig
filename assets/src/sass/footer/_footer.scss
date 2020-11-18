@@ -43,12 +43,12 @@ footer.azad-footer {
         text-align: center;
         padding: 1rem 0 1rem;
 
-        p {
-            color: var(--menu-text);
-            a {
-                color: var(--footer-title-color);
-            }
-        }
+        // p {
+        //     color: var(--menu-text);
+        //     a {
+        //         color: var(--footer-title-color);
+        //     }
+        // }
 
     }
 
@@ -65,16 +65,7 @@ only screen and ( max-device-width: 767px ) {
             padding: 4rem 0 0rem;
         }
 
-        .copyright-container {
-
-            p {
-                color: var(--menu-text);
-                a {
-                    color: var(--footer-title-color);
-                }
-            }
-
-        }
+        .copyright-container {}
         
     }
 
