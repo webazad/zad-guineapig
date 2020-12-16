@@ -153,3 +153,9 @@ if ( ! function_exists( 'azad_woo_menus' ) ) {
 	}
 	
 }
+
+if ( ! function_exists( 'azad_gutenberg_meta' ) ) :
+    function azad_gutenberg_meta() {
+        echo 'Follow twentysixteen';
+    }
+endif;

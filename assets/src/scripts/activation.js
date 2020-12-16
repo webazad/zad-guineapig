@@ -46,9 +46,14 @@ var Azad = {};
 
     Azad.audio_player = function(){
         // HAMBURGER AUDIO
-        document.getElementById("hamburger-menu").addEventListener('click', function(e) {
-            document.getElementById("hamburger-hover").play();
-        });
+        if (document.getElementById("hamburger-hover")){
+            document.getElementById("hamburger-menu").addEventListener('click', function(e) {
+                document.getElementById("hamburger-hover").play();
+            });
+            document.getElementById("cross-menu").addEventListener('click', function(e) {
+                document.getElementById("hamburger-hover").play();
+            });
+        }  
     }
 
     $window.keydown(function(){
@@ -58,7 +63,7 @@ var Azad = {};
     $document.ready(function(){
         Azad.azad_pre_loader();
         Azad.azad_burger_button();
-        // Azad.audio_player();
+        Azad.audio_player();
     });
 
 })(jQuery);

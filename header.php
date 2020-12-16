@@ -1,9 +1,9 @@
 <?php
 /**
-*-----------------------------------------------------------
+*------------------------------------
 * :: @package azad-x
 * :: @version 1.0.0
-*-----------------------------------------------------------
+*------------------------------------
 */
 ?>
 <!DOCTYPE html>
@@ -31,7 +31,7 @@
                 <!-- PRELOADER BEGINS -->
                 <div id="preloader" class="preloader">
                     <div class="inner">
-                        <!-- <figure class="logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/imgs/jd_logo.jpg" alt="Image"></figure> -->
+                        <figure class="logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/imgs/logo-white.png" alt="Image"></figure>
                         <span class="percentage"></span>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
 
         <!-- BIG WRAPPER BEGINS -->
         <main class="big-wrapper">
-            <header class="azad-header header--fixed hide-from-print">
+            <header class="azad-header header--fixed hide-from-print" style="background-color:<?php echo get_theme_mod( 'dh_bg', 'transparent' ); ?>;color:<?php echo get_theme_mod( 'hg_text_color', 'transparent'); ?>;">
                 <div class="azad-container">
                     <div class="header-container">
                         <div class="logo-wrapper">
@@ -59,7 +59,7 @@
                             </div>
 
                             <!-- RESPONSIVE TOGGLE BUTTON BEGINS -->
-                            <button class="toggle nav-toggle responsive-nav-toggle" data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
+                            <button id="hamburger-menu" class="toggle nav-toggle responsive-nav-toggle" data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
 								<!-- <div class="burger-button">
 									<span></span>
                                 </div> -->

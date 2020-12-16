@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     '2921e4ebeca4a025fcf6a3471e278f4b' => $baseDir . '/inc/functions.php',
+    'b4015dfa55a14145a93939f033ebae86' => $baseDir . '/inc/class-azad-walker-page.php',
 );

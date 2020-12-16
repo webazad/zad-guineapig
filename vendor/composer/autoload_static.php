@@ -8,6 +8,7 @@ class ComposerStaticInit1ff8fbc0c6a65916fb342471396475ad
 {
     public static $files = array (
         '2921e4ebeca4a025fcf6a3471e278f4b' => __DIR__ . '/../..' . '/inc/functions.php',
+        'b4015dfa55a14145a93939f033ebae86' => __DIR__ . '/../..' . '/inc/class-azad-walker-page.php',
     );
 
     public static $prefixLengthsPsr4 = array (

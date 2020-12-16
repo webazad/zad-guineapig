@@ -24,12 +24,11 @@ html {
             background: var( --transparent );
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            // justify-content: space-between;
             min-height: 100vh;
 
             & > section{
                 background: var( --transparent );
-                margin-top: 5.3rem;
             }
             .azad-container {
                 width: calc( 100% - 15rem );

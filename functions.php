@@ -1,11 +1,11 @@
 <?php
 
 /**
- *-----------------------------------------------------------
- * :: @package azad-x
- * :: @version 1.0.0
- *-----------------------------------------------------------
- */
+*------------------------------------
+* :: @package azad-x
+* :: @version 1.0.0
+*------------------------------------
+*/
 // EXIT IF ACCESSED DIRECTLY
 defined( 'ABSPATH' ) || exit;
 
@@ -21,10 +21,4 @@ if ( file_exists(dirname( __FILE__ ) . '/vendor/autoload.php' ) ) {
 
 if ( class_exists( 'Azad_Guineapig\\Init' ) ) :
     Azad_Guineapig\Init::register_services();
-endif;
-
-if ( ! function_exists( 'azad_gutenberg_meta' ) ) :
-    function azad_gutenberg_meta() {
-        echo 'Follow twentysixteen';
-    }
 endif;

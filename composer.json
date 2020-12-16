@@ -13,6 +13,9 @@
     "require": {},
     "autoload":{
         "psr-4":{"Azad_Guineapig\\":"./inc"},
-		"files": [ "inc/functions.php" ]
+		"files": [ 
+            "inc/functions.php",
+            "inc/class-azad-walker-page.php"
+        ]        
     }
 }

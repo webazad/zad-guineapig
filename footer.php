@@ -1,9 +1,9 @@
 <?php
 /**
-*-----------------------------------------------------------
+*------------------------------------
 * :: @package azad-guineapig
 * :: @version 1.0.0
-*-----------------------------------------------------------
+*------------------------------------
 */
 ?>
             <!-- FOOTER SECTION BEGINS -->
@@ -41,15 +41,20 @@
                 <div class="azad-copyright" style="background-color:<?php echo get_theme_mod( 'copyright_bg_color', '#000000' ); ?>;color:<?php echo get_theme_mod( 'copyright_text_color', '#ffffff' ); ?>;">
 					<div class="azad-container">
 						<div class="copyright-container">
-							<p><?php echo date( "Y" ); ?> <?php echo get_theme_mod( 'copyright_text', 'Write copyright text here...' ); ?> <a href="<?php echo home_url(); ?>"> <?php bloginfo( 'name' ); ?></a></p>
+							<p><?php echo date( "Y" ); ?> <?php echo get_theme_mod( 'copyright_text', 'All Rights Reserved By' ); ?> <a href="<?php echo home_url(); ?>"> <?php bloginfo( 'name' ); ?></a></p>
 						</div>
 					</div>
                 </div>
             </footer><!-- ends footer -->
         </main><!-- ends big wrapper -->
-        <!-- CLICK AUDIO -->
-        <audio id="hamburger-hover" src="<?php echo get_template_directory_uri(); ?>/assets/audio/link.mp3" preload="auto"></audio>
+
+        <?php if ( $enable_click_sound ) : ?>
+			<!-- CLICK AUDIO -->
+			<audio id="hamburger-hover" src="<?php echo get_template_directory_uri(); ?>/assets/audio/link.mp3" preload="auto"></audio>
+        <?php endif; ?>
+		
 		<!-- TO MAKE THE SCRIPTS WORK -->
         <?php wp_footer(); ?>
+
     </body>
 </html>
