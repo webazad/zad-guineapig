@@ -3,7 +3,11 @@
 @import "_globals";
 @import "header/_preloader";
 @import "header/_header";
-// @import "pages/_front";
+// @import "pages/_index";
+@import "pages/_front";
+@import "pages/_blog";
+@import "pages/_pages";
+@import "pages/_404";
 // @import "pages/_about";
 @import "footer/_footer";
 @import "_responsive";

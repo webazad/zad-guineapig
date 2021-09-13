@@ -8,10 +8,14 @@
 get_header(); ?>
 
     <!-- # SECTION BEGINS -->
-    <section class="azad-section">
+    <section class="azad-section azad-pages">
         <div class="azad-container">
             <div class="page-container">
                 
+				<?php 
+                    the_post_thumbnail_url();
+                ?>
+				
                 <?php 
                     if ( have_posts() ) : 
                         get_template_part( 'template-parts/loop', 'page' );					

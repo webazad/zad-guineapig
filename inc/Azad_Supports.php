@@ -48,16 +48,16 @@ if ( ! class_exists( 'Azad_Supports' ) ) :
             // 5. MULTIPLE MENU REGISTER SYSTEM
             if ( function_exists( 'register_nav_menus' ) ) {
                 register_nav_menus( array(
-                    'desktop_horizontal'   	=> __( 'Desktop Horizontal Menu', AZAD_GUINEAPIG_TEXTDOMAIN ),
-                    'desktop_sticky' 		=> __( 'Desktop Sticky Menu', AZAD_GUINEAPIG_TEXTDOMAIN ),
-                    'desktop_expanded'  	=> __( 'Desktop Expanded Menu', AZAD_GUINEAPIG_TEXTDOMAIN ),
-                    'responsive_toggle'  	=> __( 'Responsive Toggle Menu', AZAD_GUINEAPIG_TEXTDOMAIN ),
-                    'responsive_expanded'	=> __( 'Responsive Expanded Menu', AZAD_GUINEAPIG_TEXTDOMAIN ),
-                    'footer'				=> __( 'Footer Menu', AZAD_GUINEAPIG_TEXTDOMAIN ),
-                    'left_sidebar'			=> __( 'Left Sidebar Menu', AZAD_GUINEAPIG_TEXTDOMAIN ),
-                    'right_sidebar'			=> __( 'Right Sidebar Menu', AZAD_GUINEAPIG_TEXTDOMAIN ),
-                    'search_page'			=> __( 'Search Page Menu', AZAD_GUINEAPIG_TEXTDOMAIN ),
-                    'no_page'				=> __( '404 Page Menu', AZAD_GUINEAPIG_TEXTDOMAIN )
+                    'desktop_horizontal'   	=> __( 'Desktop Horizontal Menu', AZPIG_TEXTDOMAIN ),
+                    'desktop_sticky' 		=> __( 'Desktop Sticky Menu', AZPIG_TEXTDOMAIN ),
+                    'desktop_expanded'  	=> __( 'Desktop Expanded Menu', AZPIG_TEXTDOMAIN ),
+                    'responsive_toggle'  	=> __( 'Responsive Toggle Menu', AZPIG_TEXTDOMAIN ),
+                    'responsive_expanded'	=> __( 'Responsive Expanded Menu', AZPIG_TEXTDOMAIN ),
+                    'footer'				=> __( 'Footer Menu', AZPIG_TEXTDOMAIN ),
+                    'left_sidebar'			=> __( 'Left Sidebar Menu', AZPIG_TEXTDOMAIN ),
+                    'right_sidebar'			=> __( 'Right Sidebar Menu', AZPIG_TEXTDOMAIN ),
+                    'search_page'			=> __( 'Search Page Menu', AZPIG_TEXTDOMAIN ),
+                    'no_page'				=> __( '404 Page Menu', AZPIG_TEXTDOMAIN )
                 ) );
             } 
         }

@@ -25,7 +25,8 @@ if ( ! class_exists( 'Init' ) ) :
                 Front\Azad_Shortcodes::class,
                 Front\Azad_Vc::class,
                 // Azad_Register_Elementor_Widgets::class,
-                Enqueue::class
+                Enqueue::class,
+                Admin\Azad_Custom_Posts::class
             ];   
         }
         

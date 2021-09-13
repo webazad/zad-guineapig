@@ -26,7 +26,7 @@ if ( ! class_exists( 'Enqueue' ) ) :
                 'main',
                 trailingslashit( get_template_directory_uri() ) . 'assets/css/main-style.min.css',
                 array(),
-                AZAD_GUINEAPIG_VERSION,
+                AZPIG_VERSION,
                 'all'
             );
             wp_enqueue_style( 'main' );
@@ -35,7 +35,7 @@ if ( ! class_exists( 'Enqueue' ) ) :
                 'headroom',
                 trailingslashit( get_template_directory_uri() ) . 'assets/css/headroom.css',
                 array(),
-                AZAD_GUINEAPIG_VERSION,
+                AZPIG_VERSION,
                 'all'
             );
             //wp_enqueue_style( 'headroom' );
@@ -45,7 +45,7 @@ if ( ! class_exists( 'Enqueue' ) ) :
                 'headroom',
                 trailingslashit( get_template_directory_uri() ) . 'assets/js/headroom.min.js',
                 array( 'jquery' ),
-                AZAD_GUINEAPIG_VERSION,
+                AZPIG_VERSION,
                 true
             );
             //wp_enqueue_script( 'headroom' );
@@ -54,7 +54,7 @@ if ( ! class_exists( 'Enqueue' ) ) :
                 'toggles',
                 trailingslashit( get_template_directory_uri() ) . 'assets/js/toggles.min.js',
                 array( 'jquery' ),
-                AZAD_GUINEAPIG_VERSION,
+                AZPIG_VERSION,
                 true
             );
             wp_enqueue_script( 'toggles' );
@@ -63,7 +63,7 @@ if ( ! class_exists( 'Enqueue' ) ) :
                 'isotope',
                 trailingslashit( get_template_directory_uri() ) . 'assets/js/isotope.pkgd.min.js',
                 array( 'jquery' ),
-                AZAD_GUINEAPIG_VERSION,
+                AZPIG_VERSION,
                 true
             );
             wp_enqueue_script( 'isotope' );
@@ -72,7 +72,7 @@ if ( ! class_exists( 'Enqueue' ) ) :
                 'activation',
                 trailingslashit( get_template_directory_uri() ) . 'assets/js/activation.min.js',
                 array( 'jquery', 'isotope' ),
-                AZAD_GUINEAPIG_VERSION,
+                AZPIG_VERSION,
                 true
             );
             wp_enqueue_script( 'activation' );            

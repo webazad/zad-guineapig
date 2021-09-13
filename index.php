@@ -8,9 +8,9 @@
 get_header(); ?>
 
     <!-- # SECTION BEGINS -->
-    <section class="azad-section">
+    <section class="azad-section azad-index">
         <div class="azad-container">
-            <div class="loop-container">
+            <div class="index-container">
                 
                 <?php 
                     if ( have_posts() ) : 

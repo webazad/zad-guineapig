@@ -18,7 +18,7 @@
         </div>
         <footer class="article-footer">
             <?php 
-                azad_gutenberg_meta();
+                //azad_gutenberg_meta();
                 edit_post_link(
                     sprintf( __( 'Edit<span class="screen-reader-text">%s</span>', 'azad-guineapig' ), get_the_title() ),
                     '<span class="edit-link">',

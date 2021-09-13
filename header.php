@@ -22,12 +22,8 @@
 
         <?php
 			do_action( 'azad_x_header' );
-            // Check whether the preloader is activated in the customizer.
-            $enable_preloader = get_theme_mod( 'preloader_settings', true );
-            // Check whether the header search is activated in the customizer.
-            $enable_header_search = get_theme_mod( 'header_search_icon', true );
-
-            if ( $enable_preloader ) : ?>
+                        
+            if ( get_theme_mod( 'preloader_settings', false ) ) : ?>
                 <!-- PRELOADER BEGINS -->
                 <div id="preloader" class="preloader">
                     <div class="inner">
@@ -45,7 +41,7 @@
                     <div class="header-container">
                         <div class="logo-wrapper">
 
-                            <?php if ( true === $enable_header_search ) : ?>
+                            <?php if ( get_theme_mod( 'header_search_icon', true ) ) : ?>
                                 <button class="toggle search-toggle responsive-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
                                     <span class="toggle-inner">
                                         <?php azad_the_svg( 'search' ); ?>
@@ -101,7 +97,7 @@
                                 ?>
                             </nav>
                             
-                            <?php if ( true === $enable_header_search || has_nav_menu( 'desktop_expanded' ) ) : ?>
+                            <?php if ( get_theme_mod( 'header_search_icon', true ) || has_nav_menu( 'desktop_expanded' ) ) : ?>
                                 <!-- ICON BUTTONS BEGIN -->
                                 <div class="azad-search-button">
                                     <?php if ( has_nav_menu( 'desktop_expanded' ) ) : ?>
@@ -141,7 +137,7 @@
                                             </button><!-- .nav-toggle -->
                                         </div><!-- .nav-toggle-wrapper -->
                                     <?php endif; ?>
-                                    <?php if ( true === $enable_header_search ) : ?>
+                                    <?php if ( get_theme_mod( 'header_search_icon', true ) ) : ?>
                                         <div class="toggle-wrapper search-toggle-wrapper">
                                             <button class="toggle search-toggle desktop-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
                                                 <span class="toggle-inner">
@@ -183,7 +179,7 @@
             <?php
 
                 // Output the search modal (if it is activated in the customizer).
-                if ( true === $enable_header_search ) {
+                if ( get_theme_mod( 'header_search_icon', true ) ) {
                     get_template_part( 'template-parts/modal-search' );
                 }
                 

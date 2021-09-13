@@ -8,7 +8,7 @@
 get_header(); ?>
 
     <!-- MAIN SECTION BEGINS -->
-    <section class="azad-section">
+    <section class="azad-section azad-home">
         <div class="azad-container">
             <div class="blog-container">
 

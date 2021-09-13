@@ -48,7 +48,7 @@
             </footer><!-- ends footer -->
         </main><!-- ends big wrapper -->
 
-        <?php if ( $enable_click_sound ) : ?>
+        <?php if ( get_theme_mod( 'enable_click_sound', true ) ) : ?>
 			<!-- CLICK AUDIO -->
 			<audio id="hamburger-hover" src="<?php echo get_template_directory_uri(); ?>/assets/audio/link.mp3" preload="auto"></audio>
         <?php endif; ?>
